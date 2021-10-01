@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace CapabilityRequest
 {
-    public static class DemoCapabilityRequest
+    public class DemoCapabilityRequest
     {
         private static readonly string emptyIdentity =
 @"License-enabled code requires client identity data,
@@ -113,14 +113,15 @@ See the User Guide for more information.";
             return validCommand;
         }
         [STAThread]
-        static void Main()
+        static void Main1()
         {
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        public static void Main1()
+
+        public static void Main()
         {
             /*  if (!ValidateCommandLineArgs(args))
               {
@@ -128,11 +129,8 @@ See the User Guide for more information.";
                   return;
               }
             */
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            
-           if (IdentityClient.IdentityData == null || IdentityClient.IdentityData.Length == 0)
+
+            if (IdentityClient.IdentityData == null || IdentityClient.IdentityData.Length == 0)
             {
                 Console.WriteLine(emptyIdentity);
                 return;
@@ -143,10 +141,13 @@ See the User Guide for more information.";
                 string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
-                using (licensing = LicensingFactory.GetLicensing(
+                licensing = LicensingFactory.GetLicensing(
                           IdentityClient.IdentityData,
                           strPath,
-                          ""))
+                          "");
+                if (licensing == null)
+                    MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
+                //using ()
                 {
                     // The optional host name is typically set by a user as a friendly name for the host.  
                     // The host name is not used for license enforcement.                  
@@ -154,14 +155,14 @@ See the User Guide for more information.";
                     // The host type is typically a name set by the implementer, and is not modifiable by the user.
                     // While optional, the host type may be used in certain scenarios by some back-office systems such as FlexNet Operations.
                     licensing.LicenseManager.HostType = "FLX_CLIENT";
-                    ShowTSFeatures();
+                  // ShowTSFeatures();
                     Util.DisplayInfoMessage(requestType.ToString());
                     //MessageBox.Show("Attempting to register online with activation id ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "FNE Toolkit Demo");
                     //DemoSendCapabilityRequest("ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices");
                     //MessageBox.Show("Generating capability request for activation id ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "FNE Toolkit Demo");
                     //DemoGenerateCapabilityRequest("ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "c:\\temp\\caprequest.bin");
-                    MessageBox.Show("Processing capability response for activation id ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "FNE Toolkit Demo");
-                    DemoProcessCapabilityResponse("FNETestFeature", "c:\\temp\\capresponse.bin");
+                   // MessageBox.Show("Processing capability response for activation id ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "FNE Toolkit Demo");
+                   // DemoProcessCapabilityResponse("FNETestFeature", "c:\\temp\\capresponse.bin");
                     /*   switch (requestType)
                        {
                            case RequestType.generateCapabilityRequest:
@@ -182,12 +183,18 @@ See the User Guide for more information.";
                 HandleException(exc);
             }
 
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+            
+
+
             
         }
-        private static void DemoGenerateCapabilityRequest(string act_id, string demoFileName)
+        public bool DemoGenerateCapabilityRequest(string act_id, string demoFileName)
         {
             // saving the capablity request to a file
-            MessageBox.Show("Creating the capability request");
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
             options.AddRightsId(act_id, 1);
@@ -195,8 +202,9 @@ See the User Guide for more information.";
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
             if (Util.WriteData(demoFileName, capabilityRequestData.ToArray()))
             {
-                MessageBox.Show(String.Format("Capability request data written to: {0}", demoFileName));
+                //MessageBox.Show(String.Format("Capability request data written to: {0}", demoFileName));
             }
+            return true;
         }
         private static void GenerateCapabilityRequest()
         {
@@ -247,7 +255,7 @@ See the User Guide for more information.";
             }
         }
         
-        private static void DemoSendCapabilityRequest(string act_id, string demoServerURL)
+        public bool DemoSendCapabilityRequest(string act_id, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
 
@@ -275,7 +283,39 @@ See the User Guide for more information.";
             {
                 ShowPreviewResponse(binCapResponse);
             }
-            MessageBox.Show("Registration succeeded");
+            //MessageBox.Show("Registration succeeded");
+            return true;
+        }
+        public bool DemoUnregister(string act_id, string demoServerURL)
+        {
+            Util.DisplayInfoMessage("Creating the capability request");
+
+            // create the capability request
+            ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
+            options.AddRightsId(act_id, 0);
+            options.ForceResponse = true;
+
+            ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
+
+            Util.DisplayInfoMessage(String.Format("Sending the capability request to: {0}", demoServerURL));
+            byte[] binCapResponse = null;
+
+            // send the capability request to the server and receive the server response
+            CommFactory.Create(demoServerURL).SendBinaryMessage(capabilityRequestData.ToArray(), out binCapResponse);
+            if (binCapResponse != null && binCapResponse.Length > 0)
+            {
+                Util.DisplayInfoMessage("Response received");
+            }
+            if (options.Operation != CapabilityRequestOperation.Preview)
+            {
+                ProcessCapabilityResponse(binCapResponse);
+            }
+            else
+            {
+                ShowPreviewResponse(binCapResponse);
+            }
+            //MessageBox.Show("Registration succeeded");
+            return true;
         }
         private static void ProcessCapabilityResponse(byte[] binCapResponse)
         {
@@ -287,23 +327,24 @@ See the User Guide for more information.";
             AcquireReturn(surveyFeature, version);
             AcquireReturn("FNETestFeature", version);
         }
-        private static void DemoProcessCapabilityResponse(string FeatureName, string demoFileName)
+        public bool DemoProcessCapabilityResponse(string FeatureName, string demoFileName)
         {
             // read the capability response from a file and process it
-            MessageBox.Show(String.Format("Reading capability response data from: {0}", demoFileName));
+            //MessageBox.Show(String.Format("Reading capability response data from: {0}", demoFileName));
             byte[] binCapResponse = Util.ReadData(demoFileName);
             if (binCapResponse == null)
             {
-                return;
+                return false;
             }
             //Util.DisplayInfoMessage("Processing capability response");
-            MessageBox.Show("Processing capability response");
+            //MessageBox.Show("Processing capability response");
             ICapabilityResponse response = licensing.LicenseManager.ProcessCapabilityResponse(binCapResponse);
             //Util.DisplayInfoMessage("Capability response processed");
-            MessageBox.Show("Capability response processed");
+           // MessageBox.Show("Capability response processed");
             ShowCapabilityResponseDetails(response);
-            ShowTSFeatures();
+            //ShowTSFeatures();
             AcquireReturn(FeatureName, version);
+            return true;
         }
         private static void ShowPreviewResponse(byte[] binCapResponse)
         {
@@ -386,10 +427,10 @@ See the User Guide for more information.";
             IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage);
             if (collection.Count == 0)
             {
-                MessageBox.Show("You are not licensed.","FNE Toolkit Demo");
+                //MessageBox.Show("You are not licensed.","FNE Toolkit Demo");
                 return;
             }
-            MessageBox.Show("You are licensed.", "FNE Toolkit Demo");
+            //MessageBox.Show("You are licensed.", "FNE Toolkit Demo");
             StringBuilder builder = new StringBuilder();
             builder.Append(String.Format("Features loaded from trusted storage: {0}", collection.Count));
           
@@ -400,9 +441,52 @@ See the User Guide for more information.";
             }
              
             Util.DisplayInfoMessage(builder.ToString());
-            MessageBox.Show(builder.ToString());
+            //MessageBox.Show(builder.ToString());
         }
+        public string CheckLicensing()
+        {
+            if (licensing == null)
+            {
+                string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+                // Initialize ILicensing interface with identity data using the Windows common document 
+                // respository as the trusted storage location and the hard-coded string hostid "1234567890".
+                licensing = LicensingFactory.GetLicensing(
+                          IdentityClient.IdentityData,
+                          strPath,
+                          "");
+            }
+            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage);
+            if (collection.Count == 0)
+            {
 
+                return "You are not licensed.";
+            }
+            else
+                return "You are licensed. ";
+        }
+        public string DisplayTSFeatures()
+        {
+            // display the features found in the trusted storage
+            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage);
+            if (collection.Count == 0)
+            {
+                //MessageBox.Show("You are not licensed.", "FNE Toolkit Demo");
+                return "Trusted Storage is empty.";
+            }
+            //MessageBox.Show("You are licensed.", "FNE Toolkit Demo");
+            StringBuilder builder = new StringBuilder();
+            builder.Append(String.Format("Features loaded from trusted storage: {0}", collection.Count));
+
+            foreach (IFeature feature in collection)
+            {
+                builder.AppendLine(String.Empty);
+                builder.Append(feature.ToString());
+            }
+
+            Util.DisplayInfoMessage(builder.ToString());
+            //MessageBox.Show(builder.ToString());
+            return (builder.ToString());
+        }
         private static void ShowCapabilityResponseFeatures(ICapabilityResponse response)
         {
             // display the features found in the capability response

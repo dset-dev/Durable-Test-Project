@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using static CapabilityRequest.DemoCapabilityRequest;
 
 namespace CapabilityRequest
 {
@@ -14,11 +16,13 @@ namespace CapabilityRequest
     {
         String[] locales = { "en-US", "en-GB", "fr-FR",
                                 "de-DE", "ru-RU" };
+        CapabilityRequest.DemoCapabilityRequest demo;
         public Form1()
         {
             InitializeComponent();
             LoggingOutput.Text = "Windows Form App Proof of Concept for Entitlement Management. Created by the Digital Solution Enablement Team at Eaton.";
 
+            
         }
 
         public void AddLoggingOutput(string newLog)
@@ -32,6 +36,15 @@ namespace CapabilityRequest
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            try
+            {
+                demo = new DemoCapabilityRequest();
+                LoggingOutput.Text = demo.CheckLicensing();
+            }
+            catch(Exception ex)
+            {
+                LoggingOutput.Text = ex.ToString();
+            }
 
         }
 
@@ -42,13 +55,13 @@ namespace CapabilityRequest
 
         private void EntitlementIdSubmitButton_Click(object sender, EventArgs e)
         {
-            if(EntitlementIdField.Text.Length > 0)
+            /*if(EntitlementIdField.Text.Length > 0)
             {
                 var newEntitlementId = EntitlementIdField.Text;
                 var msgToLog = $"The Entitlement ID was set to {newEntitlementId}";
                 AddLoggingOutput(msgToLog);
-            }
-            
+            }*/
+            LoggingOutput.Text = demo.DisplayTSFeatures();
         }
 
         private void EntitlementIdFieldDescriptor_Click(object sender, EventArgs e)
@@ -63,20 +76,64 @@ namespace CapabilityRequest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButtonResponse1.Text = "Button 1 Pressed";
-            AddLoggingOutput("Button 1 Pressed");
+            if (EntitlementIdField.Text.Length > 0)
+            {
+                var newEntitlementId = EntitlementIdField.Text;
+                var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                if (demo.DemoSendCapabilityRequest(newEntitlementId, serverURL))
+                {
+                    LoggingOutput.Text = $"Registration succeeded";
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ButtonResponse2.Text = "Button 2 Pressed";
-            AddLoggingOutput("Button 2 Pressed");
+            if (EntitlementIdField.Text.Length > 0)
+            {
+                var newEntitlementId = EntitlementIdField.Text;
+                var fileName = FileDirField.Text + "/capabilityRequest.bin";
+                if (demo.DemoGenerateCapabilityRequest(newEntitlementId, fileName))
+                {
+                    LoggingOutput.Text = $"capabilityRequest.bin generated";
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ButtonResponse3.Text = "Button 3 Pressed";
-            AddLoggingOutput("Button 3 Pressed");
+            if (EntitlementIdField.Text.Length > 0)
+            {
+                var newEntitlementId = EntitlementIdField.Text;
+                var fileName = FileDirField.Text + "/capabilityResponse.bin";
+                if (demo.DemoProcessCapabilityResponse(newEntitlementId, fileName))
+                {
+                    LoggingOutput.Text = $"capabilityResponse.bin processed";
+                }
+            }
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoggingOutput.Text = "";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (EntitlementIdField.Text.Length > 0)
+            {
+                var newEntitlementId = EntitlementIdField.Text;
+                var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                if (demo.DemoUnregister(newEntitlementId, serverURL))
+                {
+                    LoggingOutput.Text = $"License Removed";
+                }
+            }
         }
     }
 }
