@@ -70,5 +70,10 @@ namespace EntitlementFormApp
             ButtonResponse3.Text = "button 3 press";
             AddLoggingOutput("Button 3 was pressed");
         }
+
+        private void LoggingOutput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

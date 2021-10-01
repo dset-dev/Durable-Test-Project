@@ -62,17 +62,18 @@ namespace EntitlementFormApp
             // 
             this.ParentTableLayout.AutoSize = true;
             this.ParentTableLayout.ColumnCount = 2;
-            this.ParentTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
+            this.ParentTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 304F));
             this.ParentTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ParentTableLayout.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.ParentTableLayout.Controls.Add(this.LoggingOutput, 1, 0);
             this.ParentTableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParentTableLayout.Location = new System.Drawing.Point(0, 0);
+            this.ParentTableLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ParentTableLayout.Name = "ParentTableLayout";
             this.ParentTableLayout.RowCount = 2;
             this.ParentTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
             this.ParentTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
-            this.ParentTableLayout.Size = new System.Drawing.Size(1088, 450);
+            this.ParentTableLayout.Size = new System.Drawing.Size(816, 292);
             this.ParentTableLayout.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -83,9 +84,10 @@ namespace EntitlementFormApp
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 277);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(300, 179);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -93,34 +95,38 @@ namespace EntitlementFormApp
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdFieldDescriptor);
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdField);
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdSubmitButton);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(391, 42);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(293, 27);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // EntitlementIdFieldDescriptor
             // 
             this.EntitlementIdFieldDescriptor.AutoSize = true;
-            this.EntitlementIdFieldDescriptor.Location = new System.Drawing.Point(3, 0);
+            this.EntitlementIdFieldDescriptor.Location = new System.Drawing.Point(2, 0);
+            this.EntitlementIdFieldDescriptor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EntitlementIdFieldDescriptor.Name = "EntitlementIdFieldDescriptor";
-            this.EntitlementIdFieldDescriptor.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(104, 26);
+            this.EntitlementIdFieldDescriptor.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(73, 17);
             this.EntitlementIdFieldDescriptor.TabIndex = 3;
             this.EntitlementIdFieldDescriptor.Text = "Entitlement ID";
             // 
             // EntitlementIdField
             // 
-            this.EntitlementIdField.Location = new System.Drawing.Point(113, 3);
+            this.EntitlementIdField.Location = new System.Drawing.Point(79, 2);
+            this.EntitlementIdField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EntitlementIdField.Name = "EntitlementIdField";
-            this.EntitlementIdField.Size = new System.Drawing.Size(166, 27);
+            this.EntitlementIdField.Size = new System.Drawing.Size(126, 20);
             this.EntitlementIdField.TabIndex = 4;
             // 
             // EntitlementIdSubmitButton
             // 
-            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(285, 3);
+            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(209, 2);
+            this.EntitlementIdSubmitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EntitlementIdSubmitButton.Name = "EntitlementIdSubmitButton";
-            this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.EntitlementIdSubmitButton.Size = new System.Drawing.Size(94, 29);
+            this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.EntitlementIdSubmitButton.Size = new System.Drawing.Size(70, 19);
             this.EntitlementIdSubmitButton.TabIndex = 2;
             this.EntitlementIdSubmitButton.Text = "Submit";
             this.EntitlementIdSubmitButton.UseVisualStyleBackColor = true;
@@ -130,16 +136,18 @@ namespace EntitlementFormApp
             // 
             this.flowLayoutPanel3.Controls.Add(this.button1);
             this.flowLayoutPanel3.Controls.Add(this.ButtonResponse1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 51);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(2, 33);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(379, 39);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel3.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.Size = new System.Drawing.Size(70, 19);
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -149,10 +157,11 @@ namespace EntitlementFormApp
             // 
             this.ButtonResponse1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse1.AutoSize = true;
-            this.ButtonResponse1.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse1.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse1.Name = "ButtonResponse1";
-            this.ButtonResponse1.Padding = new System.Windows.Forms.Padding(110, 6, 0, 0);
-            this.ButtonResponse1.Size = new System.Drawing.Size(265, 26);
+            this.ButtonResponse1.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse1.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse1.TabIndex = 4;
             this.ButtonResponse1.Text = "Response for button 1";
             this.ButtonResponse1.Click += new System.EventHandler(this.ButtonResponse1_Click);
@@ -161,16 +170,18 @@ namespace EntitlementFormApp
             // 
             this.flowLayoutPanel4.Controls.Add(this.button2);
             this.flowLayoutPanel4.Controls.Add(this.ButtonResponse2);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 96);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(2, 62);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(379, 39);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel4.TabIndex = 8;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.Size = new System.Drawing.Size(70, 19);
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -180,10 +191,11 @@ namespace EntitlementFormApp
             // 
             this.ButtonResponse2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse2.AutoSize = true;
-            this.ButtonResponse2.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse2.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse2.Name = "ButtonResponse2";
-            this.ButtonResponse2.Padding = new System.Windows.Forms.Padding(110, 6, 0, 0);
-            this.ButtonResponse2.Size = new System.Drawing.Size(265, 26);
+            this.ButtonResponse2.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse2.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse2.TabIndex = 5;
             this.ButtonResponse2.Text = "Response for button 2";
             // 
@@ -191,16 +203,18 @@ namespace EntitlementFormApp
             // 
             this.flowLayoutPanel5.Controls.Add(this.button3);
             this.flowLayoutPanel5.Controls.Add(this.ButtonResponse3);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 141);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(2, 91);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(379, 39);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel5.TabIndex = 9;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Location = new System.Drawing.Point(2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
+            this.button3.Size = new System.Drawing.Size(70, 19);
             this.button3.TabIndex = 6;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -210,10 +224,11 @@ namespace EntitlementFormApp
             // 
             this.ButtonResponse3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse3.AutoSize = true;
-            this.ButtonResponse3.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse3.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse3.Name = "ButtonResponse3";
-            this.ButtonResponse3.Padding = new System.Windows.Forms.Padding(110, 6, 0, 0);
-            this.ButtonResponse3.Size = new System.Drawing.Size(265, 26);
+            this.ButtonResponse3.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse3.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse3.TabIndex = 7;
             this.ButtonResponse3.Text = "Response for button 3";
             // 
@@ -221,21 +236,24 @@ namespace EntitlementFormApp
             // 
             this.LoggingOutput.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.LoggingOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F);
             this.LoggingOutput.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoggingOutput.Location = new System.Drawing.Point(409, 3);
+            this.LoggingOutput.Location = new System.Drawing.Point(306, 2);
+            this.LoggingOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoggingOutput.Name = "LoggingOutput";
             this.LoggingOutput.ReadOnly = true;
-            this.LoggingOutput.Size = new System.Drawing.Size(676, 277);
+            this.LoggingOutput.Size = new System.Drawing.Size(508, 179);
             this.LoggingOutput.TabIndex = 3;
             this.LoggingOutput.Text = "";
+            this.LoggingOutput.TextChanged += new System.EventHandler(this.LoggingOutput_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 450);
+            this.ClientSize = new System.Drawing.Size(816, 292);
             this.Controls.Add(this.ParentTableLayout);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ParentTableLayout.ResumeLayout(false);

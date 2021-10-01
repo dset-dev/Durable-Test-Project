@@ -1,7 +1,7 @@
 ﻿
 namespace CapabilityRequest
 {
-    partial class Form2
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -61,9 +61,9 @@ namespace CapabilityRequest
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 366);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // flowLayoutPanel2
@@ -71,37 +71,39 @@ namespace CapabilityRequest
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdFieldDescriptor);
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdField);
             this.flowLayoutPanel2.Controls.Add(this.EntitlementIdSubmitButton);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 2);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(391, 34);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(293, 28);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // EntitlementIdFieldDescriptor
             // 
             this.EntitlementIdFieldDescriptor.AutoSize = true;
-            this.EntitlementIdFieldDescriptor.Location = new System.Drawing.Point(3, 0);
+            this.EntitlementIdFieldDescriptor.Location = new System.Drawing.Point(2, 0);
+            this.EntitlementIdFieldDescriptor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EntitlementIdFieldDescriptor.Name = "EntitlementIdFieldDescriptor";
-            this.EntitlementIdFieldDescriptor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(95, 22);
+            this.EntitlementIdFieldDescriptor.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(73, 17);
             this.EntitlementIdFieldDescriptor.TabIndex = 3;
             this.EntitlementIdFieldDescriptor.Text = "Entitlement ID";
+            this.EntitlementIdFieldDescriptor.Click += new System.EventHandler(this.EntitlementIdFieldDescriptor_Click);
             // 
             // EntitlementIdField
             // 
-            this.EntitlementIdField.Location = new System.Drawing.Point(104, 2);
-            this.EntitlementIdField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EntitlementIdField.Location = new System.Drawing.Point(79, 2);
+            this.EntitlementIdField.Margin = new System.Windows.Forms.Padding(2);
             this.EntitlementIdField.Name = "EntitlementIdField";
-            this.EntitlementIdField.Size = new System.Drawing.Size(166, 22);
+            this.EntitlementIdField.Size = new System.Drawing.Size(126, 20);
             this.EntitlementIdField.TabIndex = 4;
             // 
             // EntitlementIdSubmitButton
             // 
-            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(276, 2);
-            this.EntitlementIdSubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(209, 2);
+            this.EntitlementIdSubmitButton.Margin = new System.Windows.Forms.Padding(2);
             this.EntitlementIdSubmitButton.Name = "EntitlementIdSubmitButton";
-            this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.EntitlementIdSubmitButton.Size = new System.Drawing.Size(94, 23);
+            this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.EntitlementIdSubmitButton.Size = new System.Drawing.Size(70, 19);
             this.EntitlementIdSubmitButton.TabIndex = 2;
             this.EntitlementIdSubmitButton.Text = "Submit1";
             this.EntitlementIdSubmitButton.UseVisualStyleBackColor = true;
@@ -111,30 +113,32 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel3.Controls.Add(this.button1);
             this.flowLayoutPanel3.Controls.Add(this.ButtonResponse1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 40);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(2, 34);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(379, 31);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel3.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.Size = new System.Drawing.Size(70, 19);
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ButtonResponse1
             // 
             this.ButtonResponse1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse1.AutoSize = true;
-            this.ButtonResponse1.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse1.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse1.Name = "ButtonResponse1";
-            this.ButtonResponse1.Padding = new System.Windows.Forms.Padding(110, 5, 0, 0);
-            this.ButtonResponse1.Size = new System.Drawing.Size(259, 22);
+            this.ButtonResponse1.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse1.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse1.TabIndex = 4;
             this.ButtonResponse1.Text = "Response for button 1";
             this.ButtonResponse1.Click += new System.EventHandler(this.ButtonResponse1_Click);
@@ -143,30 +147,32 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel4.Controls.Add(this.button2);
             this.flowLayoutPanel4.Controls.Add(this.ButtonResponse2);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 75);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(2, 63);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(379, 31);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel4.TabIndex = 8;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 23);
+            this.button2.Size = new System.Drawing.Size(70, 19);
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ButtonResponse2
             // 
             this.ButtonResponse2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse2.AutoSize = true;
-            this.ButtonResponse2.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse2.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse2.Name = "ButtonResponse2";
-            this.ButtonResponse2.Padding = new System.Windows.Forms.Padding(110, 5, 0, 0);
-            this.ButtonResponse2.Size = new System.Drawing.Size(259, 22);
+            this.ButtonResponse2.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse2.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse2.TabIndex = 5;
             this.ButtonResponse2.Text = "Response for button 2";
             // 
@@ -174,30 +180,32 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel5.Controls.Add(this.button3);
             this.flowLayoutPanel5.Controls.Add(this.ButtonResponse3);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 110);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(2, 92);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(379, 31);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(284, 25);
             this.flowLayoutPanel5.TabIndex = 9;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 23);
+            this.button3.Size = new System.Drawing.Size(70, 19);
             this.button3.TabIndex = 6;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ButtonResponse3
             // 
             this.ButtonResponse3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonResponse3.AutoSize = true;
-            this.ButtonResponse3.Location = new System.Drawing.Point(103, 0);
+            this.ButtonResponse3.Location = new System.Drawing.Point(76, 0);
+            this.ButtonResponse3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ButtonResponse3.Name = "ButtonResponse3";
-            this.ButtonResponse3.Padding = new System.Windows.Forms.Padding(110, 5, 0, 0);
-            this.ButtonResponse3.Size = new System.Drawing.Size(259, 22);
+            this.ButtonResponse3.Padding = new System.Windows.Forms.Padding(82, 4, 0, 0);
+            this.ButtonResponse3.Size = new System.Drawing.Size(194, 17);
             this.ButtonResponse3.TabIndex = 7;
             this.ButtonResponse3.Text = "Response for button 3";
             // 
@@ -207,21 +215,23 @@ namespace CapabilityRequest
             this.LoggingOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F);
             this.LoggingOutput.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoggingOutput.Location = new System.Drawing.Point(3, 145);
-            this.LoggingOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoggingOutput.Location = new System.Drawing.Point(2, 121);
+            this.LoggingOutput.Margin = new System.Windows.Forms.Padding(2);
             this.LoggingOutput.Name = "LoggingOutput";
             this.LoggingOutput.ReadOnly = true;
-            this.LoggingOutput.Size = new System.Drawing.Size(391, 222);
+            this.LoggingOutput.Size = new System.Drawing.Size(293, 181);
             this.LoggingOutput.TabIndex = 10;
             this.LoggingOutput.Text = "";
+            this.LoggingOutput.TextChanged += new System.EventHandler(this.LoggingOutput_TextChanged);
             // 
-            // Form2
+            // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form2";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

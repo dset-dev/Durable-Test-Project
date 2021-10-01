@@ -118,7 +118,7 @@ See the User Guide for more information.";
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new Form1());
         }
         public static void Main1()
         {
@@ -130,7 +130,7 @@ See the User Guide for more information.";
             */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new Form1());
             
            if (IdentityClient.IdentityData == null || IdentityClient.IdentityData.Length == 0)
             {
