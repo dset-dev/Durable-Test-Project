@@ -197,7 +197,11 @@ See the User Guide for more information.";
             // saving the capablity request to a file
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
+            //act_id = "4f76-2ba4-ba76-4cb9-9e38-32f0-4781-2ffa";
             options.AddRightsId(act_id, 1);
+            // Optionally add capability requeest vendor dictionary items.
+            options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
+            options.AddVendorDictionaryItem(dictionaryKey2, 123);
             options.ForceResponse = true;
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
             if (Util.WriteData(demoFileName, capabilityRequestData.ToArray()))
