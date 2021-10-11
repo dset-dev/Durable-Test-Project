@@ -141,6 +141,8 @@ See the User Guide for more information.";
                 string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
+
+
                 licensing = LicensingFactory.GetLicensing(
                           IdentityClient.IdentityData,
                           strPath,
@@ -149,13 +151,27 @@ See the User Guide for more information.";
                     MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
                 //using ()
                 {
+                    Dictionary<HostIdEnum, List<String>> hostIDs = licensing.LicenseManager.HostIds;
+                    if (hostIDs.ContainsKey(HostIdEnum.FLX_HOSTID_TYPE_USER))
+                    {
+                        // select only the Ethernet addresses
+                        List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
+                        //Chapter 6 Using the FlexNet Embedded APIs
+                        // Common Steps to Prepare for Licensing
+                        //FlexNet Embedded Client 2021.09.NET XT SDK User Guide FNE - 2021 - 09 - NXTSDK - UG00 Company Confidential 61
+                        // use the first Ethernet address (index 0) in the list
+                     //   licensing.LicenseManager.SetHostId(HostIdEnum.FLX_HOSTID_TYPE_USER, ethernetIDs[0]);
+                    }
                     // The optional host name is typically set by a user as a friendly name for the host.  
                     // The host name is not used for license enforcement.                  
-                    licensing.LicenseManager.HostName = "FNE Toolkit Test #2";
+                 //    licensing.LicenseManager.HostName = "FNE Toolkit Test #2";
+                    //    licensing.LicenseManager.SetHostId(HostIdEnum., ethernetIDs[0]);
                     // The host type is typically a name set by the implementer, and is not modifiable by the user.
                     // While optional, the host type may be used in certain scenarios by some back-office systems such as FlexNet Operations.
                     licensing.LicenseManager.HostType = "FLX_CLIENT";
-                  // ShowTSFeatures();
+                    //licensing.LicenseManager.SetHostId(HostIdEnum.FLX_HOSTID_TYPE_USER, ethernetIDs[0]);
+
+                    // ShowTSFeatures();
                     Util.DisplayInfoMessage(requestType.ToString());
                     //MessageBox.Show("Attempting to register online with activation id ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "FNE Toolkit Demo");
                     //DemoSendCapabilityRequest("ce4e-155e-f7d0-4399-aca1-6967-9688-9483", "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices");
@@ -192,14 +208,17 @@ See the User Guide for more information.";
 
             
         }
-        public bool DemoGenerateCapabilityRequest(string act_id, string demoFileName)
+        public bool DemoGenerateCapabilityRequest(string act_id, string act2_id, string demoFileName)
         {
             // saving the capablity request to a file
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            //act_id = "4f76-2ba4-ba76-4cb9-9e38-32f0-4781-2ffa";
             options.AddRightsId(act_id, 1);
+            if (act2_id.Trim() != "")
+                options.AddRightsId(act2_id, 1);
             // Optionally add capability requeest vendor dictionary items.
+            // if we don't include code below,
+            //request does not parse in FNO
             options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
             options.AddVendorDictionaryItem(dictionaryKey2, 123);
             options.ForceResponse = true;
@@ -259,13 +278,15 @@ See the User Guide for more information.";
             }
         }
         
-        public bool DemoSendCapabilityRequest(string act_id, string demoServerURL)
+        public bool DemoSendCapabilityRequest(string act_id, string act2_id, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
 
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
             options.AddRightsId(act_id, 1);
+            if (act2_id.Trim()!="")
+                options.AddRightsId(act2_id, 1);
             options.ForceResponse = true;
 
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
@@ -290,13 +311,15 @@ See the User Guide for more information.";
             //MessageBox.Show("Registration succeeded");
             return true;
         }
-        public bool DemoUnregister(string act_id, string demoServerURL)
+        public bool DemoUnregister(string act_id, string act2_id, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
-
+            
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
             options.AddRightsId(act_id, 0);
+            if (act2_id.Trim() != "")
+                options.AddRightsId(act2_id, 0);
             options.ForceResponse = true;
 
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
@@ -331,7 +354,7 @@ See the User Guide for more information.";
             AcquireReturn(surveyFeature, version);
             AcquireReturn("FNETestFeature", version);
         }
-        public bool DemoProcessCapabilityResponse(string FeatureName, string demoFileName)
+        public bool DemoProcessCapabilityResponse(string actId, string actId2, string demoFileName)
         {
             // read the capability response from a file and process it
             //MessageBox.Show(String.Format("Reading capability response data from: {0}", demoFileName));
@@ -347,7 +370,9 @@ See the User Guide for more information.";
            // MessageBox.Show("Capability response processed");
             ShowCapabilityResponseDetails(response);
             //ShowTSFeatures();
-            AcquireReturn(FeatureName, version);
+            AcquireReturn(actId, version);
+            if (actId2.Trim() != "")
+                AcquireReturn(actId, version);
             return true;
         }
         private static void ShowPreviewResponse(byte[] binCapResponse)

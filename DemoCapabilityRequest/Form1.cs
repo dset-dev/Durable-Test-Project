@@ -78,9 +78,10 @@ namespace CapabilityRequest
         {
             if (EntitlementIdField.Text.Length > 0)
             {
-                var newEntitlementId = EntitlementIdField.Text;
+                var entId = EntitlementIdField.Text;
+                var entId2 = entitlementID2Field.Text;
                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
-                if (demo.DemoSendCapabilityRequest(newEntitlementId, serverURL))
+                if (demo.DemoSendCapabilityRequest(entId, entId2, serverURL))
                 {
                     LoggingOutput.Text = $"Registration succeeded";
                 }
@@ -91,9 +92,10 @@ namespace CapabilityRequest
         {
             if (EntitlementIdField.Text.Length > 0)
             {
-                var newEntitlementId = EntitlementIdField.Text;
+                var entId = EntitlementIdField.Text;
+                var entId2 = entitlementID2Field.Text;
                 var fileName = FileDirField.Text + "/capabilityRequest.bin";
-                if (demo.DemoGenerateCapabilityRequest(newEntitlementId, fileName))
+                if (demo.DemoGenerateCapabilityRequest(entId, entId2, fileName))
                 {
                     LoggingOutput.Text = $"capabilityRequest.bin generated";
                 }
@@ -104,9 +106,10 @@ namespace CapabilityRequest
         {
             if (EntitlementIdField.Text.Length > 0)
             {
-                var newEntitlementId = EntitlementIdField.Text;
+                var entId = EntitlementIdField.Text;
+                var entId2 = entitlementID2Field.Text;
                 var fileName = FileDirField.Text + "/capabilityResponse.bin";
-                if (demo.DemoProcessCapabilityResponse(newEntitlementId, fileName))
+                if (demo.DemoProcessCapabilityResponse(entId, entId2, fileName))
                 {
                     LoggingOutput.Text = $"capabilityResponse.bin processed";
                 }
@@ -127,9 +130,10 @@ namespace CapabilityRequest
         {
             if (EntitlementIdField.Text.Length > 0)
             {
-                var newEntitlementId = EntitlementIdField.Text;
+                var entId = EntitlementIdField.Text;
+                var entId2 = entitlementID2Field.Text;
                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
-                if (demo.DemoUnregister(newEntitlementId, serverURL))
+                if (demo.DemoUnregister(entId, entId2, serverURL))
                 {
                     LoggingOutput.Text = $"License Removed";
                 }

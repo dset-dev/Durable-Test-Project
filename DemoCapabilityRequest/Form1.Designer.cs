@@ -34,33 +34,32 @@ namespace CapabilityRequest
             this.EntitlementIdFieldDescriptor = new System.Windows.Forms.Label();
             this.EntitlementIdField = new System.Windows.Forms.TextBox();
             this.EntitlementIdSubmitButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.LoggingOutput = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FileDirField = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.entitlementID2Field = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FileDirField = new System.Windows.Forms.TextBox();
+            this.LoggingOutput = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel7.SuspendLayout();
-            this.flowLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -75,7 +74,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(902, 450);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -88,7 +87,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(785, 34);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(884, 34);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // EntitlementIdFieldDescriptor
@@ -123,86 +122,6 @@ namespace CapabilityRequest
             this.EntitlementIdSubmitButton.UseVisualStyleBackColor = true;
             this.EntitlementIdSubmitButton.Click += new System.EventHandler(this.EntitlementIdSubmitButton_Click);
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label1);
-            this.flowLayoutPanel3.Controls.Add(this.FileDirField);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel7);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel6);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 40);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(785, 72);
-            this.flowLayoutPanel3.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Online Activation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.button1);
-            this.flowLayoutPanel4.Controls.Add(this.button5);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 116);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(785, 37);
-            this.flowLayoutPanel4.TabIndex = 8;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Generate Capability Request";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.button2);
-            this.flowLayoutPanel5.Controls.Add(this.button3);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 157);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(785, 31);
-            this.flowLayoutPanel5.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(247, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(238, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Process Capability Response";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // LoggingOutput
-            // 
-            this.LoggingOutput.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.LoggingOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F);
-            this.LoggingOutput.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoggingOutput.Location = new System.Drawing.Point(3, 192);
-            this.LoggingOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LoggingOutput.Name = "LoggingOutput";
-            this.LoggingOutput.ReadOnly = true;
-            this.LoggingOutput.Size = new System.Drawing.Size(785, 205);
-            this.LoggingOutput.TabIndex = 10;
-            this.LoggingOutput.Text = "";
-            this.LoggingOutput.TextChanged += new System.EventHandler(this.LoggingOutput_TextChanged);
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(585, 2);
@@ -215,44 +134,25 @@ namespace CapabilityRequest
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label1
+            // flowLayoutPanel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label1.Size = new System.Drawing.Size(91, 22);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "File Directory";
+            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel7);
+            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel6);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 40);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(884, 72);
+            this.flowLayoutPanel3.TabIndex = 7;
             // 
-            // FileDirField
+            // flowLayoutPanel7
             // 
-            this.FileDirField.Location = new System.Drawing.Point(100, 2);
-            this.FileDirField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FileDirField.Name = "FileDirField";
-            this.FileDirField.Size = new System.Drawing.Size(300, 22);
-            this.FileDirField.TabIndex = 5;
-            this.FileDirField.Text = "c:/Temp/FlexnetLicensing";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(247, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(238, 35);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Online DeActivation";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Controls.Add(this.label2);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 63);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(785, 31);
-            this.flowLayoutPanel6.TabIndex = 8;
+            this.flowLayoutPanel7.Controls.Add(this.label2);
+            this.flowLayoutPanel7.Controls.Add(this.entitlementID2Field);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 2);
+            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(881, 31);
+            this.flowLayoutPanel7.TabIndex = 11;
             // 
             // label2
             // 
@@ -260,25 +160,86 @@ namespace CapabilityRequest
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.Size = new System.Drawing.Size(86, 22);
             this.label2.TabIndex = 4;
-            this.label2.Text = "File directory";
+            this.label2.Text = "Activation ID";
             // 
-            // flowLayoutPanel7
+            // entitlementID2Field
             // 
-            this.flowLayoutPanel7.Controls.Add(this.label3);
-            this.flowLayoutPanel7.Controls.Add(this.textBox2);
-            this.flowLayoutPanel7.Controls.Add(this.flowLayoutPanel8);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 28);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(785, 31);
-            this.flowLayoutPanel7.TabIndex = 11;
+            this.entitlementID2Field.Location = new System.Drawing.Point(95, 2);
+            this.entitlementID2Field.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.entitlementID2Field.Name = "entitlementID2Field";
+            this.entitlementID2Field.Size = new System.Drawing.Size(300, 22);
+            this.entitlementID2Field.TabIndex = 5;
+            this.entitlementID2Field.Text = "ce4e-155e-f7d0-4399-aca1-6967-9688-9483";
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label4);
+            this.flowLayoutPanel6.Controls.Add(this.textBox1);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 37);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(881, 31);
+            this.flowLayoutPanel6.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label4.Size = new System.Drawing.Size(86, 22);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Activation ID";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(95, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(300, 22);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "ce4e-155e-f7d0-4399-aca1-6967-9688-9483";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.button1);
+            this.flowLayoutPanel4.Controls.Add(this.button5);
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.textBox2);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 116);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(884, 37);
+            this.flowLayoutPanel4.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Online Activation";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(159, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(150, 30);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Online Deactivation";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(315, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label3.Size = new System.Drawing.Size(82, 22);
@@ -287,47 +248,86 @@ namespace CapabilityRequest
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 2);
+            this.textBox2.Location = new System.Drawing.Point(403, 2);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(644, 22);
+            this.textBox2.Size = new System.Drawing.Size(466, 22);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "https://eaton-fno-uat.flexnetoperations.com/flexnet/operations/deviceservices";
             // 
-            // flowLayoutPanel8
+            // flowLayoutPanel5
             // 
-            this.flowLayoutPanel8.Controls.Add(this.label4);
-            this.flowLayoutPanel8.Controls.Add(this.textBox3);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 28);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(785, 31);
-            this.flowLayoutPanel8.TabIndex = 8;
+            this.flowLayoutPanel5.Controls.Add(this.button2);
+            this.flowLayoutPanel5.Controls.Add(this.button3);
+            this.flowLayoutPanel5.Controls.Add(this.label1);
+            this.flowLayoutPanel5.Controls.Add(this.FileDirField);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 157);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(884, 56);
+            this.flowLayoutPanel5.TabIndex = 9;
             // 
-            // label4
+            // button2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label4.Size = new System.Drawing.Size(89, 22);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "File directory";
+            this.button2.Location = new System.Drawing.Point(3, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 45);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Generate Capability Request";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // button3
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 2);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(300, 22);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "c:/Temp/FlexnetLicensing";
+            this.button3.Location = new System.Drawing.Point(159, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 45);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Process Capability Response";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(315, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label1.Size = new System.Drawing.Size(91, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "File Directory";
+            // 
+            // FileDirField
+            // 
+            this.FileDirField.Location = new System.Drawing.Point(412, 2);
+            this.FileDirField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FileDirField.Name = "FileDirField";
+            this.FileDirField.Size = new System.Drawing.Size(457, 22);
+            this.FileDirField.TabIndex = 5;
+            this.FileDirField.Text = "c:/Revenera/FlexnetLicensing";
+            // 
+            // LoggingOutput
+            // 
+            this.LoggingOutput.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.LoggingOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F);
+            this.LoggingOutput.ForeColor = System.Drawing.SystemColors.Window;
+            this.LoggingOutput.Location = new System.Drawing.Point(3, 217);
+            this.LoggingOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoggingOutput.Name = "LoggingOutput";
+            this.LoggingOutput.ReadOnly = true;
+            this.LoggingOutput.Size = new System.Drawing.Size(884, 205);
+            this.LoggingOutput.TabIndex = 10;
+            this.LoggingOutput.Text = "";
+            this.LoggingOutput.TextChanged += new System.EventHandler(this.LoggingOutput_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(902, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -337,15 +337,14 @@ namespace CapabilityRequest
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
-            this.flowLayoutPanel8.ResumeLayout(false);
-            this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -368,13 +367,13 @@ namespace CapabilityRequest
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox FileDirField;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox entitlementID2Field;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

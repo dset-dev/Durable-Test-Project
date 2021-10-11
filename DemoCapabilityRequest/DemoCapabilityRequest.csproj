@@ -170,7 +170,7 @@ echo $(LIBDIR)
 if exist  "%25LIBDIR%25" (echo "EXISTS") else (echo "DOES NOT EXIST")
 if exist  "$(ProjectDir)\lib\FlxCore64.dll" (echo "EXISTS!!!") else (echo "DOES NOT EXIST!!!")
 if exist "$(ProjectDir)\lib" (echo "LIB EXISTS") else (echo "NO LIB")
-if exist "$(ProjectDir)\lib" if exist  "$(ProjectDir)\lib\FlxCore64.dll" xcopy  "$(ProjectDir)\lib\FlxCore64.dll" "$(TargetDir)" /D
+rem if exist "$(ProjectDir)\lib" if exist  "$(ProjectDir)\lib\FlxCore64.dll" xcopy  "$(ProjectDir)\lib\FlxCore64.dll" "$(TargetDir)" /D
 if exist "%25LIBDIR%25" if exist "%25LIBDIR%25\%25FLXCORE%25" xcopy "%25LIBDIR%25\%25FLXCORE%25" "$(TargetDir)" /D
 if exist "%25LIBDIR%25" if exist "%25LIBDIR%25\%25FLXCORE64%25" xcopy "%25LIBDIR%25\%25FLXCORE64%25" "$(TargetDir)" /D
 </PostBuildEvent>
