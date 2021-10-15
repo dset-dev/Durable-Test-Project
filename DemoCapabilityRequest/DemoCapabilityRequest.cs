@@ -35,6 +35,8 @@ namespace CapabilityRequest
 {
     public class DemoCapabilityRequest
     {
+        private static readonly List<LicenseInfo> licenses = new List<LicenseInfo>();
+
         private static readonly string emptyIdentity =
 @"License-enabled code requires client identity data,
 which you create with pubidutil and printbin -CS.
@@ -46,8 +48,8 @@ See the User Guide for more information.";
         private static readonly string licenseAcquired = "License acquisition for feature '{0}' version '{1}' successful";
         private static readonly string attemptingReturn = "Attempting to return license for feature '{0}' version '{1}'";
         private static readonly string licenseReturned = "License for feature '{0}' version '{1}' successfully returned";
-        private static readonly string surveyFeature = "survey";
-        private static readonly string version = "1.0";
+        //private static readonly string surveyFeature = "survey";
+      //  private static readonly string version = "1.0";
 
         private static readonly string dictionaryKey1 = "StringKey";
         private static readonly string dictionaryKey2 = "Integer Key";
@@ -142,33 +144,36 @@ See the User Guide for more information.";
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
 
-
-                licensing = LicensingFactory.GetLicensing(
-                          IdentityClient.IdentityData,
+                //string trialPath= Util.()
+               licensing = LicensingFactory.GetLicensing(
+                         IdentityClient.IdentityData,
                           strPath,
-                          "");
-                if (licensing == null)
-                    MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
+                          "84C5A66DA60A");
+           //     if (licensing == null)
+           //         MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
                 //using ()
                 {
-                    Dictionary<HostIdEnum, List<String>> hostIDs = licensing.LicenseManager.HostIds;
-                    if (hostIDs.ContainsKey(HostIdEnum.FLX_HOSTID_TYPE_USER))
-                    {
+          //          Dictionary<HostIdEnum, List<String>> hostIDs = licensing.LicenseManager.HostIds;
+                   // if (hostIDs.ContainsKey(HostIdEnum.FLX_HOSTID_TYPE_USER))
+                   // {
                         // select only the Ethernet addresses
-                        List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
+                   //     List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
                         //Chapter 6 Using the FlexNet Embedded APIs
                         // Common Steps to Prepare for Licensing
                         //FlexNet Embedded Client 2021.09.NET XT SDK User Guide FNE - 2021 - 09 - NXTSDK - UG00 Company Confidential 61
                         // use the first Ethernet address (index 0) in the list
                      //   licensing.LicenseManager.SetHostId(HostIdEnum.FLX_HOSTID_TYPE_USER, ethernetIDs[0]);
-                    }
+                   // }
                     // The optional host name is typically set by a user as a friendly name for the host.  
                     // The host name is not used for license enforcement.                  
-                 //    licensing.LicenseManager.HostName = "FNE Toolkit Test #2";
+          //           licensing.LicenseManager.HostName = "FNE Toolkit Test #2";
                     //    licensing.LicenseManager.SetHostId(HostIdEnum., ethernetIDs[0]);
                     // The host type is typically a name set by the implementer, and is not modifiable by the user.
                     // While optional, the host type may be used in certain scenarios by some back-office systems such as FlexNet Operations.
                     licensing.LicenseManager.HostType = "FLX_CLIENT";
+
+                    licensing.LicenseManager.AddTrustedStorageLicenseSource();
+                    licensing.LicenseManager.AddTrialLicenseSource();
                     //licensing.LicenseManager.SetHostId(HostIdEnum.FLX_HOSTID_TYPE_USER, ethernetIDs[0]);
 
                     // ShowTSFeatures();
@@ -202,25 +207,101 @@ See the User Guide for more information.";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            
+           // Application.Run(new Form1());
+           Application.Run(new DemoUserLicense());
 
 
-            
+
         }
-        public bool DemoGenerateCapabilityRequest(string act_id, string act2_id, string demoFileName)
+        public bool DemoCapabilityRequestTest(string demoFileName)
+        {
+            string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+
+            ILicensing licensing1 = LicensingFactory.GetLicensing(
+                      IdentityClient.IdentityData,
+                      strPath,
+                      "12345");
+            licensing1.LicenseManager.HostName = "FNE Toolkit Test #2";
+            licensing1.LicenseManager.HostType = "FLX_CLIENT";
+            ICapabilityRequestOptions options = licensing1.LicenseManager.CreateCapabilityRequestOptions();
+            options.AddRightsId("1cb5-b7bf-dc3b-421f-82ad-a159-1f06-fee8", 1);
+            options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
+            options.AddVendorDictionaryItem(dictionaryKey2, 123);
+
+            // force capability response from server even if nothing has changed
+         //   options.ForceResponse = false;// true;
+            ICapabilityRequestData capabilityRequestData = licensing1.LicenseManager.CreateCapabilityRequest(options);
+            if (Util.WriteData(demoFileName, capabilityRequestData.ToArray()))
+            {
+                //MessageBox.Show(String.Format("Capability request data written to: {0}", demoFileName));
+            }
+            return true;
+        }
+        public void RefreshLicensingHost(string hostId)
+        {
+            string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+
+            licensing = LicensingFactory.GetLicensing(
+          IdentityClient.IdentityData,
+          strPath,
+          hostId);
+            licensing.LicenseManager.HostType = "FLX_CLIENT";
+        }
+        //To-Do change "buffer1" -> filename
+        public bool DemoLoadLicenseFile( string licFileName)
+        {
+         
+
+            //licensing1.LicenseManager.HostName = "FNE Toolkit Test #2";
+            
+            if (!String.IsNullOrEmpty(licFileName))
+            {
+                Util.DisplayInfoMessage(String.Format("Reading data from {0}", licFileName));
+                byte[] inputFileData = Util.ReadData(licFileName);
+                licensing.LicenseManager.AddBufferLicenseSource(inputFileData, "buffer1");
+            }
+            IFeatureCollection bufferFeatures = licensing.LicenseManager.GetFeatureCollection("buffer1");
+            foreach (IFeature feature in bufferFeatures)
+            {
+                licenses.Add(new LicenseInfo(feature.Name, feature.Version, 1));
+                try
+                {
+                    ILicense acquiredLicense = licensing.LicenseManager.Acquire(feature.Name, feature.Version);
+                }
+                catch (Exception exc)
+                {
+                    HandleException(exc);
+                    return false;
+                }
+            }
+           
+            return true;
+        }
+        public string DemoDisplayLicenses()
+        {
+            string ret = "";
+            IFeatureCollection bufferFeatures = licensing.LicenseManager.GetFeatureCollection("buffer1");
+            foreach (IFeature feature in bufferFeatures)
+            {
+                ret += feature.ToString();
+            }
+            return ret;
+        }
+        public bool DemoGenerateCapabilityRequest(string act_id, string act2_id, int txtCnt, string demoFileName)
         {
             // saving the capablity request to a file
             // create the capability request
+            int cnt = txtCnt;
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddRightsId(act_id, 1);
+            options.AddRightsId(act_id, cnt);
             if (act2_id.Trim() != "")
-                options.AddRightsId(act2_id, 1);
+                options.AddRightsId(act2_id, cnt);
             // Optionally add capability requeest vendor dictionary items.
             // if we don't include code below,
             //request does not parse in FNO
-            options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
-            options.AddVendorDictionaryItem(dictionaryKey2, 123);
+            //options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
+            //options.AddVendorDictionaryItem(dictionaryKey2, 123);
+            options.Incremental = true;
             options.ForceResponse = true;
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
             if (Util.WriteData(demoFileName, capabilityRequestData.ToArray()))
@@ -277,17 +358,53 @@ See the User Guide for more information.";
                 ShowPreviewResponse(binCapResponse);
             }
         }
-        
-        public bool DemoSendCapabilityRequest(string act_id, string act2_id, string demoServerURL)
+        public bool DemoSendCapabilityFeatureRequest(string feature, int cnt, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
 
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddRightsId(act_id, 1);
+            options.AddDesiredFeature(new FeatureData(feature, "1.0", 1));
+            //if (act2_id.Trim() != "")
+            //    options.AddRightsId(act2_id, cnt);
+
+            options.Incremental = true;
+                  options.ForceResponse = true;
+
+            ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
+
+            Util.DisplayInfoMessage(String.Format("Sending the capability request to: {0}", demoServerURL));
+            byte[] binCapResponse = null;
+
+            // send the capability request to the server and receive the server response
+            CommFactory.Create(demoServerURL).SendBinaryMessage(capabilityRequestData.ToArray(), out binCapResponse);
+            if (binCapResponse != null && binCapResponse.Length > 0)
+            {
+                Util.DisplayInfoMessage("Response received");
+            }
+            if (options.Operation != CapabilityRequestOperation.Preview)
+            {
+                ProcessCapabilityResponse(binCapResponse);
+            }
+            else
+            {
+                ShowPreviewResponse(binCapResponse);
+            }
+            //MessageBox.Show("Registration succeeded");
+            return true;
+        }
+        public bool DemoSendCapabilityRequest(string act_id, string act2_id, int cnt, string demoServerURL)
+        {
+            Util.DisplayInfoMessage("Creating the capability request");
+
+            // create the capability request
+            ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
+            options.AddRightsId(act_id, cnt);
             if (act2_id.Trim()!="")
-                options.AddRightsId(act2_id, 1);
-            options.ForceResponse = true;
+                options.AddRightsId(act2_id, cnt);
+
+            options.Incremental = true;
+ //         options.ForceResponse = true;
 
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
 
@@ -351,8 +468,14 @@ See the User Guide for more information.";
             Util.DisplayInfoMessage("Capability response processed");
             ShowCapabilityResponseDetails(response);
             ShowTSFeatures();
-            AcquireReturn(surveyFeature, version);
-            AcquireReturn("FNETestFeature", version);
+            IFeatureCollection collection = response.FeatureCollection;
+            foreach (IFeature feature in collection)
+            {
+                AcquireReturn(feature.Name, feature.Version);
+            }
+
+            //AcquireReturn(surveyFeature, version);
+            //AcquireReturn("FNETestFeature", version);
         }
         public bool DemoProcessCapabilityResponse(string actId, string actId2, string demoFileName)
         {
@@ -370,9 +493,12 @@ See the User Guide for more information.";
            // MessageBox.Show("Capability response processed");
             ShowCapabilityResponseDetails(response);
             //ShowTSFeatures();
-            AcquireReturn(actId, version);
-            if (actId2.Trim() != "")
-                AcquireReturn(actId, version);
+            IFeatureCollection collection = response.FeatureCollection;
+            foreach (IFeature feature in collection)
+            {
+                AcquireReturn(feature.Name, feature.Version);
+            }
+
             return true;
         }
         private static void ShowPreviewResponse(byte[] binCapResponse)
@@ -493,6 +619,32 @@ See the User Guide for more information.";
             else
                 return "You are licensed. ";
         }
+        public string DisplayTrialsFeatures()
+        {
+            // display the features found in the trusted storage
+            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.Trials);
+            if (collection.Count == 0)
+            {
+                //MessageBox.Show("You are not licensed.", "FNE Toolkit Demo");
+                return "No Features in Trials.";
+            }
+            //MessageBox.Show("You are licensed.", "FNE Toolkit Demo");
+            StringBuilder builder = new StringBuilder();
+            builder.Append(String.Format("Features loaded from trials: {0}", collection.Count));
+
+            foreach (IFeature feature in collection)
+            {
+                builder.AppendLine(String.Empty);
+                builder.Append(feature.ToString());
+
+                //acquiredLicense = licensing.LicenseManager.Acquire(feature.Name, feature.Version);
+                //currentFeature = acquiredLicense.Name;
+            }
+
+            Util.DisplayInfoMessage(builder.ToString());
+            //MessageBox.Show(builder.ToString());
+            return (builder.ToString());
+        }
         public string DisplayTSFeatures()
         {
             // display the features found in the trusted storage
@@ -510,6 +662,9 @@ See the User Guide for more information.";
             {
                 builder.AppendLine(String.Empty);
                 builder.Append(feature.ToString());
+
+              //  acquiredLicense = licensing.LicenseManager.Acquire(feature.Name, feature.Version);
+              //  currentFeature = acquiredLicense.Name;
             }
 
             Util.DisplayInfoMessage(builder.ToString());
@@ -645,7 +800,7 @@ See the User Guide for more information.";
                 {
                     // return license 
                     Util.DisplayInfoMessage(String.Format(attemptingReturn, currentFeature, requestedVersion));
-                    acquiredLicense.ReturnLicense();
+                 //   acquiredLicense.ReturnLicense();
                     Util.DisplayInfoMessage(String.Format(licenseReturned, currentFeature, requestedVersion));
                 }
             }
@@ -654,7 +809,52 @@ See the User Guide for more information.";
                 HandleException(exc);
             }
         }
+        ILicense acquiredLicense;
+        public bool DemoAcquire(string feature, string version)
+        {
+            try
+            {
+                // attempt to obtain version 1.0 (or greater) of the requested feature
+                acquiredLicense = licensing.LicenseManager.Acquire(feature, version);
 
+                    currentFeature = acquiredLicense.Name;
+                    string currentVersion = acquiredLicense.Version;
+                    Util.DisplayInfoMessage(String.Format(licenseAcquired, currentFeature, currentVersion));
+                    //// application logic here
+ 
+            }
+            catch (Exception exc)
+            {
+                HandleException(exc);
+            }
+            return true;
+        }
+        public bool DemoReturn(string feature, string version)
+        {
+            try
+            {
+                // attempt to obtain version 1.0 (or greater) of the requested feature
+                //   System.Collections.ObjectModel.ReadOnlyCollection<ILicense> collection = licensing.LicenseManager.Licenses();
+                acquiredLicense.ReturnLicense();
+
+                System.Collections.ObjectModel.ReadOnlyCollection<ILicense> licenses = licensing.LicenseManager.Licenses();
+                foreach (ILicense l in licenses)
+                {
+                    //more complex check
+                    //if (l.Version==version)
+                    //ILicense currentLicense =l;
+                    if (l.Name==feature)
+                       l.ReturnLicense();
+                }
+
+
+            }
+            catch (Exception exc)
+            {
+                HandleException(exc);
+            }
+            return true;
+        }
         private static void HandleException(Exception exc)
         {
             StringBuilder builder = new StringBuilder();
@@ -709,6 +909,34 @@ See the User Guide for more information.";
             builder.AppendLine("          https://<tenant>.compliance.flexnetoperations.com/deviceservices.");
 
             Util.DisplayMessage(builder.ToString(), "USAGE");
+        }
+    }
+    public class LicenseInfo
+    {
+        private string name;
+        private string version;
+        private int count;
+
+        public LicenseInfo(string name, string version, int count)
+        {
+            this.name = name;
+            this.version = version;
+            this.count = count;
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public string Version
+        {
+            get { return version; }
+        }
+
+        public int Count
+        {
+            get { return count; }
         }
     }
 

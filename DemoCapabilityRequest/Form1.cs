@@ -66,7 +66,7 @@ namespace CapabilityRequest
 
         private void EntitlementIdFieldDescriptor_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void LoggingOutput_TextChanged(object sender, EventArgs e)
@@ -80,8 +80,14 @@ namespace CapabilityRequest
             {
                 var entId = EntitlementIdField.Text;
                 var entId2 = entitlementID2Field.Text;
-                var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
-                if (demo.DemoSendCapabilityRequest(entId, entId2, serverURL))
+
+                var feature = txtFeature.Text;
+                int cnt = Int32.Parse(txtCnt.Text);
+                //var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                // var serverURL = "http://localhost:7070/api/1.0/instances/~";
+                var serverURL = "http://localhost:7070/fne/bin/capability";
+               // if (demo.DemoSendCapabilityRequest(entId, entId2, cnt, serverURL))
+                if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
                 {
                     LoggingOutput.Text = $"Registration succeeded";
                 }
@@ -95,7 +101,9 @@ namespace CapabilityRequest
                 var entId = EntitlementIdField.Text;
                 var entId2 = entitlementID2Field.Text;
                 var fileName = FileDirField.Text + "/capabilityRequest.bin";
-                if (demo.DemoGenerateCapabilityRequest(entId, entId2, fileName))
+                int cnt = Int32.Parse(txtCnt.Text);
+                if (demo.DemoGenerateCapabilityRequest(entId, entId2, cnt, fileName))
+                //if (demo.DemoCapabilityRequestTest(fileName))
                 {
                     LoggingOutput.Text = $"capabilityRequest.bin generated";
                 }
@@ -138,6 +146,26 @@ namespace CapabilityRequest
                     LoggingOutput.Text = $"License Removed";
                 }
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LoggingOutput.Text = demo.DisplayTrialsFeatures();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            bool ret = demo.DemoAcquire(txtFeature.Text, txtVersion.Text);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            bool ret = demo.DemoReturn(txtFeature.Text, txtVersion.Text);
+        }
+
+        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
