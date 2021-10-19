@@ -68,6 +68,8 @@ See the User Guide for more information.";
             sendCapabilityRequest,
         }
 
+        private static Dictionary<HostIdEnum, List<String>> hostIDs;
+
         private static bool ValidateCommandLineArgs(string[] args)
         {
             bool validCommand = false;
@@ -114,7 +116,7 @@ See the User Guide for more information.";
             }
             return validCommand;
         }
-        [STAThread]
+        
         static void Main1()
         {
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
@@ -122,7 +124,7 @@ See the User Guide for more information.";
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-
+        [STAThread]
         public static void Main()
         {
             /*  if (!ValidateCommandLineArgs(args))
@@ -141,6 +143,7 @@ See the User Guide for more information.";
             try
             {
                 string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+                //string strPath = "C:\\Users\\e0067804\\flexnetls\\";
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
 
@@ -148,16 +151,16 @@ See the User Guide for more information.";
                licensing = LicensingFactory.GetLicensing(
                          IdentityClient.IdentityData,
                           strPath,
-                          "84C5A66DA60A");
+                          "");
            //     if (licensing == null)
            //         MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
                 //using ()
                 {
-          //          Dictionary<HostIdEnum, List<String>> hostIDs = licensing.LicenseManager.HostIds;
+                   hostIDs = licensing.LicenseManager.HostIds;
                    // if (hostIDs.ContainsKey(HostIdEnum.FLX_HOSTID_TYPE_USER))
                    // {
                         // select only the Ethernet addresses
-                   //     List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
+                        List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
                         //Chapter 6 Using the FlexNet Embedded APIs
                         // Common Steps to Prepare for Licensing
                         //FlexNet Embedded Client 2021.09.NET XT SDK User Guide FNE - 2021 - 09 - NXTSDK - UG00 Company Confidential 61
@@ -207,11 +210,16 @@ See the User Guide for more information.";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Form1());
-           Application.Run(new DemoUserLicense());
+            Application.Run(new Form1());
+           //Application.Run(new DemoUserLicense());
 
 
 
+        }
+
+        public string DemoSelectHost(FlxDotNetClient.HostIdEnum hostId)
+        {
+            return hostIDs[hostId][0];
         }
         public bool DemoCapabilityRequestTest(string demoFileName)
         {
@@ -237,7 +245,8 @@ See the User Guide for more information.";
             }
             return true;
         }
-        public void RefreshLicensingHost(string hostId)
+        //84C5A66DA60A
+        public void DemoRefreshLicensingHost(string hostId)
         {
             string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
 
@@ -248,7 +257,7 @@ See the User Guide for more information.";
             licensing.LicenseManager.HostType = "FLX_CLIENT";
         }
         //To-Do change "buffer1" -> filename
-        public bool DemoLoadLicenseFile( string licFileName)
+        public string DemoLoadLicenseFile( string licFileName)
         {
          
 
@@ -256,9 +265,13 @@ See the User Guide for more information.";
             
             if (!String.IsNullOrEmpty(licFileName))
             {
-                Util.DisplayInfoMessage(String.Format("Reading data from {0}", licFileName));
-                byte[] inputFileData = Util.ReadData(licFileName);
-                licensing.LicenseManager.AddBufferLicenseSource(inputFileData, "buffer1");
+                IFeatureCollection temp = licensing.LicenseManager.GetFeatureCollection("buffer1");
+                if ( temp.Count==0)
+                {
+                    Util.DisplayInfoMessage(String.Format("Reading data from {0}", licFileName));
+                    byte[] inputFileData = Util.ReadData(licFileName);
+                    licensing.LicenseManager.AddBufferLicenseSource(inputFileData, "buffer1");
+                }
             }
             IFeatureCollection bufferFeatures = licensing.LicenseManager.GetFeatureCollection("buffer1");
             foreach (IFeature feature in bufferFeatures)
@@ -271,11 +284,11 @@ See the User Guide for more information.";
                 catch (Exception exc)
                 {
                     HandleException(exc);
-                    return false;
+                    return exc.ToString();
                 }
             }
            
-            return true;
+            return "";
         }
         public string DemoDisplayLicenses()
         {

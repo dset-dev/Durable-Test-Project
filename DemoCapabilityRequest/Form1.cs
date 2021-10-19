@@ -83,11 +83,11 @@ namespace CapabilityRequest
 
                 var feature = txtFeature.Text;
                 int cnt = Int32.Parse(txtCnt.Text);
-                //var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+               // var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
                 // var serverURL = "http://localhost:7070/api/1.0/instances/~";
-                var serverURL = "http://localhost:7070/fne/bin/capability";
+               var serverURL = "http://localhost:7070/fne/bin/capability";
                // if (demo.DemoSendCapabilityRequest(entId, entId2, cnt, serverURL))
-                if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
+              if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
                 {
                     LoggingOutput.Text = $"Registration succeeded";
                 }
