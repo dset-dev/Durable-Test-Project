@@ -87,7 +87,7 @@ namespace CapabilityRequest
                 // var serverURL = "http://localhost:7070/api/1.0/instances/~";
                var serverURL = "http://localhost:7070/fne/bin/capability";
                // if (demo.DemoSendCapabilityRequest(entId, entId2, cnt, serverURL))
-              if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
+              if (demo.DemoSendCapabilityFeatureRequest(feature, "1.0", cnt, serverURL))
                 {
                     LoggingOutput.Text = $"Registration succeeded";
                 }
@@ -102,7 +102,7 @@ namespace CapabilityRequest
                 var entId2 = entitlementID2Field.Text;
                 var fileName = FileDirField.Text + "/capabilityRequest.bin";
                 int cnt = Int32.Parse(txtCnt.Text);
-                if (demo.DemoGenerateCapabilityRequest(entId, entId2, cnt, fileName))
+                if (demo.DemoGenerateCapabilityRequest(entId, entId2, cnt, cnt,fileName))
                 //if (demo.DemoCapabilityRequestTest(fileName))
                 {
                     LoggingOutput.Text = $"capabilityRequest.bin generated";

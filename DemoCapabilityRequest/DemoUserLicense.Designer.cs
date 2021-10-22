@@ -41,9 +41,7 @@ namespace CapabilityRequest
             this.label5 = new System.Windows.Forms.Label();
             this.actID2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCnt = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOnlineActivate = new System.Windows.Forms.Button();
+            this.onlineCnt2 = new System.Windows.Forms.TextBox();
             this.LoggingOutput = new System.Windows.Forms.RichTextBox();
             this.TSFNOOnline = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -92,21 +90,13 @@ namespace CapabilityRequest
             this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.actOffline1 = new System.Windows.Forms.TextBox();
-            this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.actOffline2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cntOffline = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtReqRespFile = new System.Windows.Forms.TextBox();
-            this.button21 = new System.Windows.Forms.Button();
+            this.offlineCnt2 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.TSFNOOffline = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.feature1Cnt = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -120,15 +110,63 @@ namespace CapabilityRequest
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel25 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cloudFeature1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cloudVersion1 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cloudCount1 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel26 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel27 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCloudAcquire = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.CloudTS = new System.Windows.Forms.RichTextBox();
+            this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cloudStatus = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cloudDevice = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel29 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.onlineCnt3 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnOnlineActivate = new System.Windows.Forms.Button();
             this.flowLayoutPanel22 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.onlineCnt1 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.offlineCnt1 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel30 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.offlineCnt3 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel24 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtReqRespFile = new System.Windows.Forms.TextBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.TSFNOOffline = new System.Windows.Forms.RichTextBox();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanel13.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
@@ -148,11 +186,20 @@ namespace CapabilityRequest
             this.flowLayoutPanel17.SuspendLayout();
             this.flowLayoutPanel18.SuspendLayout();
             this.flowLayoutPanel19.SuspendLayout();
-            this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel12.SuspendLayout();
             this.flowLayoutPanel20.SuspendLayout();
-            this.flowLayoutPanel22.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.flowLayoutPanel23.SuspendLayout();
+            this.flowLayoutPanel25.SuspendLayout();
+            this.flowLayoutPanel26.SuspendLayout();
+            this.flowLayoutPanel27.SuspendLayout();
+            this.flowLayoutPanel28.SuspendLayout();
+            this.flowLayoutPanel29.SuspendLayout();
+            this.flowLayoutPanel11.SuspendLayout();
+            this.flowLayoutPanel22.SuspendLayout();
+            this.flowLayoutPanel30.SuspendLayout();
+            this.flowLayoutPanel24.SuspendLayout();
+            this.flowLayoutPanel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -165,7 +212,7 @@ namespace CapabilityRequest
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(946, 373);
+            this.tabPage4.Size = new System.Drawing.Size(982, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "FNO-Online";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -174,19 +221,22 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel9);
             this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel10);
-            this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanel8.Controls.Add(this.LoggingOutput);
+            this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel29);
+            this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanel8.Controls.Add(this.TSFNOOnline);
             this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel22);
             this.flowLayoutPanel8.Location = new System.Drawing.Point(12, 0);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(928, 377);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(955, 479);
             this.flowLayoutPanel8.TabIndex = 0;
             // 
             // flowLayoutPanel9
             // 
             this.flowLayoutPanel9.Controls.Add(this.EntitlementIdFieldDescriptor);
             this.flowLayoutPanel9.Controls.Add(this.actID1);
+            this.flowLayoutPanel9.Controls.Add(this.label28);
+            this.flowLayoutPanel9.Controls.Add(this.onlineCnt1);
             this.flowLayoutPanel9.Controls.Add(this.EntitlementIdSubmitButton);
             this.flowLayoutPanel9.Controls.Add(this.button8);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 2);
@@ -216,7 +266,7 @@ namespace CapabilityRequest
             // 
             // EntitlementIdSubmitButton
             // 
-            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(401, 2);
+            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(502, 2);
             this.EntitlementIdSubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EntitlementIdSubmitButton.Name = "EntitlementIdSubmitButton";
             this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -228,7 +278,7 @@ namespace CapabilityRequest
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(585, 2);
+            this.button8.Location = new System.Drawing.Point(686, 2);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -243,7 +293,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel10.Controls.Add(this.label5);
             this.flowLayoutPanel10.Controls.Add(this.actID2);
             this.flowLayoutPanel10.Controls.Add(this.label6);
-            this.flowLayoutPanel10.Controls.Add(this.txtCnt);
+            this.flowLayoutPanel10.Controls.Add(this.onlineCnt2);
             this.flowLayoutPanel10.Location = new System.Drawing.Point(3, 40);
             this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
@@ -278,34 +328,13 @@ namespace CapabilityRequest
             this.label6.TabIndex = 6;
             this.label6.Text = "Count";
             // 
-            // txtCnt
+            // onlineCnt2
             // 
-            this.txtCnt.Location = new System.Drawing.Point(452, 2);
-            this.txtCnt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCnt.Name = "txtCnt";
-            this.txtCnt.Size = new System.Drawing.Size(44, 22);
-            this.txtCnt.TabIndex = 7;
-            this.txtCnt.Text = "1";
-            // 
-            // flowLayoutPanel11
-            // 
-            this.flowLayoutPanel11.Controls.Add(this.btnOnlineActivate);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 75);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(884, 37);
-            this.flowLayoutPanel11.TabIndex = 14;
-            // 
-            // btnOnlineActivate
-            // 
-            this.btnOnlineActivate.Location = new System.Drawing.Point(3, 2);
-            this.btnOnlineActivate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOnlineActivate.Name = "btnOnlineActivate";
-            this.btnOnlineActivate.Size = new System.Drawing.Size(150, 30);
-            this.btnOnlineActivate.TabIndex = 3;
-            this.btnOnlineActivate.Text = "Activate/Deactivate";
-            this.btnOnlineActivate.UseVisualStyleBackColor = true;
-            this.btnOnlineActivate.Click += new System.EventHandler(this.btnOnlineActivate_Click);
+            this.onlineCnt2.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.onlineCnt2.Name = "onlineCnt2";
+            this.onlineCnt2.Size = new System.Drawing.Size(44, 22);
+            this.onlineCnt2.TabIndex = 7;
             // 
             // LoggingOutput
             // 
@@ -313,7 +342,7 @@ namespace CapabilityRequest
             this.LoggingOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoggingOutput.Font = new System.Drawing.Font("Courier New", 10.8F);
             this.LoggingOutput.ForeColor = System.Drawing.SystemColors.Window;
-            this.LoggingOutput.Location = new System.Drawing.Point(3, 116);
+            this.LoggingOutput.Location = new System.Drawing.Point(3, 75);
             this.LoggingOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoggingOutput.Name = "LoggingOutput";
             this.LoggingOutput.ReadOnly = true;
@@ -324,11 +353,11 @@ namespace CapabilityRequest
             // TSFNOOnline
             // 
             this.TSFNOOnline.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.TSFNOOnline.Font = new System.Drawing.Font("Courier New", 7.8F);
+            this.TSFNOOnline.Font = new System.Drawing.Font("Arial", 9F);
             this.TSFNOOnline.ForeColor = System.Drawing.SystemColors.Window;
-            this.TSFNOOnline.Location = new System.Drawing.Point(3, 121);
+            this.TSFNOOnline.Location = new System.Drawing.Point(3, 156);
             this.TSFNOOnline.Name = "TSFNOOnline";
-            this.TSFNOOnline.Size = new System.Drawing.Size(910, 212);
+            this.TSFNOOnline.Size = new System.Drawing.Size(925, 253);
             this.TSFNOOnline.TabIndex = 17;
             this.TSFNOOnline.Text = "";
             // 
@@ -338,9 +367,9 @@ namespace CapabilityRequest
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(946, 373);
+            this.tabPage3.Size = new System.Drawing.Size(982, 485);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "LLS";
+            this.tabPage3.Text = "Local License Server";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel13
@@ -352,7 +381,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel13.Controls.Add(this.flowLayoutPanel20);
             this.flowLayoutPanel13.Location = new System.Drawing.Point(9, 7);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(911, 347);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(970, 406);
             this.flowLayoutPanel13.TabIndex = 0;
             // 
             // flowLayoutPanel14
@@ -465,11 +494,11 @@ namespace CapabilityRequest
             // llsTSStatus
             // 
             this.llsTSStatus.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.llsTSStatus.Font = new System.Drawing.Font("Courier New", 7.8F);
+            this.llsTSStatus.Font = new System.Drawing.Font("Arial", 9F);
             this.llsTSStatus.ForeColor = System.Drawing.SystemColors.Window;
             this.llsTSStatus.Location = new System.Drawing.Point(3, 120);
             this.llsTSStatus.Name = "llsTSStatus";
-            this.llsTSStatus.Size = new System.Drawing.Size(910, 185);
+            this.llsTSStatus.Size = new System.Drawing.Size(948, 240);
             this.llsTSStatus.TabIndex = 16;
             this.llsTSStatus.Text = "";
             // 
@@ -479,7 +508,7 @@ namespace CapabilityRequest
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(946, 373);
+            this.tabPage2.Size = new System.Drawing.Size(982, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Trials";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -491,7 +520,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel12);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(12, 20);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(919, 341);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(919, 431);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // flowLayoutPanel7
@@ -567,11 +596,11 @@ namespace CapabilityRequest
             // txtTrials
             // 
             this.txtTrials.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtTrials.Font = new System.Drawing.Font("Courier New", 7.8F);
+            this.txtTrials.Font = new System.Drawing.Font("Arial", 9F);
             this.txtTrials.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTrials.Location = new System.Drawing.Point(3, 50);
             this.txtTrials.Name = "txtTrials";
-            this.txtTrials.Size = new System.Drawing.Size(910, 238);
+            this.txtTrials.Size = new System.Drawing.Size(910, 322);
             this.txtTrials.TabIndex = 3;
             this.txtTrials.Text = "";
             // 
@@ -581,7 +610,7 @@ namespace CapabilityRequest
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(946, 373);
+            this.tabPage1.Size = new System.Drawing.Size(982, 426);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Host ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -594,7 +623,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 367);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 420);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -718,7 +747,7 @@ namespace CapabilityRequest
             this.txtStatus.ForeColor = System.Drawing.SystemColors.Window;
             this.txtStatus.Location = new System.Drawing.Point(3, 3);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(895, 217);
+            this.txtStatus.Size = new System.Drawing.Size(907, 237);
             this.txtStatus.TabIndex = 0;
             this.txtStatus.Text = "";
             // 
@@ -727,7 +756,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel5.Controls.Add(this.txtException);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 330);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(891, 35);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(891, 25);
             this.flowLayoutPanel5.TabIndex = 3;
             // 
             // txtException
@@ -744,10 +773,11 @@ namespace CapabilityRequest
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(954, 402);
+            this.tabControl1.Size = new System.Drawing.Size(990, 514);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage5
@@ -756,7 +786,7 @@ namespace CapabilityRequest
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(946, 373);
+            this.tabPage5.Size = new System.Drawing.Size(982, 485);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "FNO-Offline";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -765,19 +795,21 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel18);
             this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel19);
-            this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel21);
             this.flowLayoutPanel17.Controls.Add(this.richTextBox1);
-            this.flowLayoutPanel17.Controls.Add(this.TSFNOOffline);
-            this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel23);
+            this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel30);
+            this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel21);
+            this.flowLayoutPanel17.Controls.Add(this.flowLayoutPanel24);
             this.flowLayoutPanel17.Location = new System.Drawing.Point(9, 12);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(928, 349);
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(928, 473);
             this.flowLayoutPanel17.TabIndex = 1;
             // 
             // flowLayoutPanel18
             // 
             this.flowLayoutPanel18.Controls.Add(this.label11);
             this.flowLayoutPanel18.Controls.Add(this.actOffline1);
+            this.flowLayoutPanel18.Controls.Add(this.label29);
+            this.flowLayoutPanel18.Controls.Add(this.offlineCnt1);
             this.flowLayoutPanel18.Controls.Add(this.button15);
             this.flowLayoutPanel18.Controls.Add(this.button16);
             this.flowLayoutPanel18.Location = new System.Drawing.Point(3, 2);
@@ -805,21 +837,9 @@ namespace CapabilityRequest
             this.actOffline1.TabIndex = 4;
             this.actOffline1.Text = "ce4e-155e-f7d0-4399-aca1-6967-9688-9483";
             // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(401, 2);
-            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button15.Size = new System.Drawing.Size(178, 32);
-            this.button15.TabIndex = 2;
-            this.button15.Text = "Display Trusted Storage";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(585, 2);
+            this.button16.Location = new System.Drawing.Point(686, 2);
             this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button16.Name = "button16";
             this.button16.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -834,11 +854,11 @@ namespace CapabilityRequest
             this.flowLayoutPanel19.Controls.Add(this.label12);
             this.flowLayoutPanel19.Controls.Add(this.actOffline2);
             this.flowLayoutPanel19.Controls.Add(this.label13);
-            this.flowLayoutPanel19.Controls.Add(this.cntOffline);
+            this.flowLayoutPanel19.Controls.Add(this.offlineCnt2);
             this.flowLayoutPanel19.Location = new System.Drawing.Point(3, 40);
             this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(881, 31);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(884, 31);
             this.flowLayoutPanel19.TabIndex = 13;
             // 
             // label12
@@ -869,77 +889,14 @@ namespace CapabilityRequest
             this.label13.TabIndex = 6;
             this.label13.Text = "Count";
             // 
-            // cntOffline
+            // offlineCnt2
             // 
-            this.cntOffline.Location = new System.Drawing.Point(452, 2);
-            this.cntOffline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cntOffline.Name = "cntOffline";
-            this.cntOffline.Size = new System.Drawing.Size(44, 22);
-            this.cntOffline.TabIndex = 7;
-            this.cntOffline.Text = "1";
-            // 
-            // flowLayoutPanel21
-            // 
-            this.flowLayoutPanel21.Controls.Add(this.label14);
-            this.flowLayoutPanel21.Controls.Add(this.txtReqRespFile);
-            this.flowLayoutPanel21.Controls.Add(this.button21);
-            this.flowLayoutPanel21.Controls.Add(this.button19);
-            this.flowLayoutPanel21.Controls.Add(this.button20);
-            this.flowLayoutPanel21.Location = new System.Drawing.Point(3, 75);
-            this.flowLayoutPanel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel21.Name = "flowLayoutPanel21";
-            this.flowLayoutPanel21.Size = new System.Drawing.Size(884, 56);
-            this.flowLayoutPanel21.TabIndex = 15;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(557, 2);
-            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(150, 45);
-            this.button19.TabIndex = 4;
-            this.button19.Text = "Generate Capability Request";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(713, 2);
-            this.button20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(150, 45);
-            this.button20.TabIndex = 6;
-            this.button20.Text = "Process Capability Response";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 0);
-            this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label14.Size = new System.Drawing.Size(30, 22);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "File";
-            // 
-            // txtReqRespFile
-            // 
-            this.txtReqRespFile.Location = new System.Drawing.Point(39, 2);
-            this.txtReqRespFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtReqRespFile.Name = "txtReqRespFile";
-            this.txtReqRespFile.Size = new System.Drawing.Size(457, 22);
-            this.txtReqRespFile.TabIndex = 5;
-            // 
-            // button21
-            // 
-            this.button21.Image = global::CapabilityRequest.Properties.Resources.document_open_2;
-            this.button21.Location = new System.Drawing.Point(502, 3);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(49, 38);
-            this.button21.TabIndex = 7;
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.offlineCnt2.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.offlineCnt2.Name = "offlineCnt2";
+            this.offlineCnt2.Size = new System.Drawing.Size(44, 22);
+            this.offlineCnt2.TabIndex = 7;
+            this.offlineCnt2.Text = "1";
             // 
             // richTextBox1
             // 
@@ -947,24 +904,13 @@ namespace CapabilityRequest
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Font = new System.Drawing.Font("Courier New", 10.8F);
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 135);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 75);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(884, 0);
             this.richTextBox1.TabIndex = 16;
             this.richTextBox1.Text = "";
-            // 
-            // TSFNOOffline
-            // 
-            this.TSFNOOffline.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.TSFNOOffline.Font = new System.Drawing.Font("Courier New", 7.8F);
-            this.TSFNOOffline.ForeColor = System.Drawing.SystemColors.Window;
-            this.TSFNOOffline.Location = new System.Drawing.Point(3, 140);
-            this.TSFNOOffline.Name = "TSFNOOffline";
-            this.TSFNOOffline.Size = new System.Drawing.Size(910, 167);
-            this.TSFNOOffline.TabIndex = 17;
-            this.TSFNOOffline.Text = "";
             // 
             // label7
             // 
@@ -1058,7 +1004,7 @@ namespace CapabilityRequest
             // flowLayoutPanel12
             // 
             this.flowLayoutPanel12.Controls.Add(this.textBox1);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 294);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 378);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Size = new System.Drawing.Size(891, 35);
             this.flowLayoutPanel12.TabIndex = 4;
@@ -1073,7 +1019,7 @@ namespace CapabilityRequest
             // flowLayoutPanel20
             // 
             this.flowLayoutPanel20.Controls.Add(this.textBox5);
-            this.flowLayoutPanel20.Location = new System.Drawing.Point(3, 311);
+            this.flowLayoutPanel20.Location = new System.Drawing.Point(3, 366);
             this.flowLayoutPanel20.Name = "flowLayoutPanel20";
             this.flowLayoutPanel20.Size = new System.Drawing.Size(908, 35);
             this.flowLayoutPanel20.TabIndex = 17;
@@ -1085,13 +1031,346 @@ namespace CapabilityRequest
             this.textBox5.Size = new System.Drawing.Size(875, 22);
             this.textBox5.TabIndex = 0;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.flowLayoutPanel23);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(982, 485);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Cloud Server";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel23
+            // 
+            this.flowLayoutPanel23.Controls.Add(this.flowLayoutPanel25);
+            this.flowLayoutPanel23.Controls.Add(this.flowLayoutPanel26);
+            this.flowLayoutPanel23.Controls.Add(this.flowLayoutPanel27);
+            this.flowLayoutPanel23.Controls.Add(this.CloudTS);
+            this.flowLayoutPanel23.Controls.Add(this.flowLayoutPanel28);
+            this.flowLayoutPanel23.Location = new System.Drawing.Point(6, 10);
+            this.flowLayoutPanel23.Name = "flowLayoutPanel23";
+            this.flowLayoutPanel23.Size = new System.Drawing.Size(970, 406);
+            this.flowLayoutPanel23.TabIndex = 1;
+            // 
+            // flowLayoutPanel25
+            // 
+            this.flowLayoutPanel25.Controls.Add(this.label18);
+            this.flowLayoutPanel25.Controls.Add(this.cloudFeature1);
+            this.flowLayoutPanel25.Controls.Add(this.label19);
+            this.flowLayoutPanel25.Controls.Add(this.cloudVersion1);
+            this.flowLayoutPanel25.Controls.Add(this.label20);
+            this.flowLayoutPanel25.Controls.Add(this.cloudCount1);
+            this.flowLayoutPanel25.Controls.Add(this.button9);
+            this.flowLayoutPanel25.Controls.Add(this.button11);
+            this.flowLayoutPanel25.Location = new System.Drawing.Point(3, 2);
+            this.flowLayoutPanel25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel25.Name = "flowLayoutPanel25";
+            this.flowLayoutPanel25.Size = new System.Drawing.Size(948, 34);
+            this.flowLayoutPanel25.TabIndex = 13;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 0);
+            this.label18.Name = "label18";
+            this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label18.Size = new System.Drawing.Size(57, 22);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Feature";
+            // 
+            // cloudFeature1
+            // 
+            this.cloudFeature1.Location = new System.Drawing.Point(66, 2);
+            this.cloudFeature1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cloudFeature1.Name = "cloudFeature1";
+            this.cloudFeature1.Size = new System.Drawing.Size(300, 22);
+            this.cloudFeature1.TabIndex = 4;
+            this.cloudFeature1.Text = "Datastreams";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(372, 0);
+            this.label19.Name = "label19";
+            this.label19.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label19.Size = new System.Drawing.Size(56, 22);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Version";
+            // 
+            // cloudVersion1
+            // 
+            this.cloudVersion1.Location = new System.Drawing.Point(434, 2);
+            this.cloudVersion1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cloudVersion1.Name = "cloudVersion1";
+            this.cloudVersion1.Size = new System.Drawing.Size(44, 22);
+            this.cloudVersion1.TabIndex = 9;
+            this.cloudVersion1.Text = "1.0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(484, 0);
+            this.label20.Name = "label20";
+            this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label20.Size = new System.Drawing.Size(45, 22);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Count";
+            // 
+            // cloudCount1
+            // 
+            this.cloudCount1.Location = new System.Drawing.Point(535, 2);
+            this.cloudCount1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cloudCount1.Name = "cloudCount1";
+            this.cloudCount1.Size = new System.Drawing.Size(44, 22);
+            this.cloudCount1.TabIndex = 11;
+            this.cloudCount1.Text = "1";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(585, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(178, 32);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "Display Trusted Storage";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(769, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button11.Size = new System.Drawing.Size(80, 32);
+            this.button11.TabIndex = 12;
+            this.button11.Text = "Clear ";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel26
+            // 
+            this.flowLayoutPanel26.Controls.Add(this.label21);
+            this.flowLayoutPanel26.Controls.Add(this.textBox10);
+            this.flowLayoutPanel26.Controls.Add(this.label22);
+            this.flowLayoutPanel26.Controls.Add(this.textBox11);
+            this.flowLayoutPanel26.Controls.Add(this.label23);
+            this.flowLayoutPanel26.Controls.Add(this.textBox12);
+            this.flowLayoutPanel26.Location = new System.Drawing.Point(3, 40);
+            this.flowLayoutPanel26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel26.Name = "flowLayoutPanel26";
+            this.flowLayoutPanel26.Size = new System.Drawing.Size(948, 34);
+            this.flowLayoutPanel26.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(3, 0);
+            this.label21.Name = "label21";
+            this.label21.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label21.Size = new System.Drawing.Size(57, 22);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Feature";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(66, 2);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(300, 22);
+            this.textBox10.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(372, 0);
+            this.label22.Name = "label22";
+            this.label22.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label22.Size = new System.Drawing.Size(56, 22);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Version";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(434, 2);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(44, 22);
+            this.textBox11.TabIndex = 13;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(484, 0);
+            this.label23.Name = "label23";
+            this.label23.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label23.Size = new System.Drawing.Size(45, 22);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Count";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(535, 2);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(44, 22);
+            this.textBox12.TabIndex = 15;
+            // 
+            // flowLayoutPanel27
+            // 
+            this.flowLayoutPanel27.Controls.Add(this.label25);
+            this.flowLayoutPanel27.Controls.Add(this.cloudDevice);
+            this.flowLayoutPanel27.Controls.Add(this.btnCloudAcquire);
+            this.flowLayoutPanel27.Controls.Add(this.label24);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(3, 78);
+            this.flowLayoutPanel27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel27.Name = "flowLayoutPanel27";
+            this.flowLayoutPanel27.Size = new System.Drawing.Size(948, 37);
+            this.flowLayoutPanel27.TabIndex = 15;
+            // 
+            // btnCloudAcquire
+            // 
+            this.btnCloudAcquire.Location = new System.Drawing.Point(372, 2);
+            this.btnCloudAcquire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCloudAcquire.Name = "btnCloudAcquire";
+            this.btnCloudAcquire.Size = new System.Drawing.Size(150, 30);
+            this.btnCloudAcquire.TabIndex = 3;
+            this.btnCloudAcquire.Text = "Acquire/Return";
+            this.btnCloudAcquire.UseVisualStyleBackColor = true;
+            this.btnCloudAcquire.Click += new System.EventHandler(this.btnCloudAcquire_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(528, 0);
+            this.label24.Name = "label24";
+            this.label24.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label24.Size = new System.Drawing.Size(198, 22);
+            this.label24.TabIndex = 9;
+            this.label24.Text = "(Use negative count to return)";
+            // 
+            // CloudTS
+            // 
+            this.CloudTS.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.CloudTS.Font = new System.Drawing.Font("Arial", 9F);
+            this.CloudTS.ForeColor = System.Drawing.SystemColors.Window;
+            this.CloudTS.Location = new System.Drawing.Point(3, 120);
+            this.CloudTS.Name = "CloudTS";
+            this.CloudTS.Size = new System.Drawing.Size(948, 240);
+            this.CloudTS.TabIndex = 16;
+            this.CloudTS.Text = "";
+            // 
+            // flowLayoutPanel28
+            // 
+            this.flowLayoutPanel28.Controls.Add(this.cloudStatus);
+            this.flowLayoutPanel28.Location = new System.Drawing.Point(3, 366);
+            this.flowLayoutPanel28.Name = "flowLayoutPanel28";
+            this.flowLayoutPanel28.Size = new System.Drawing.Size(908, 35);
+            this.flowLayoutPanel28.TabIndex = 17;
+            // 
+            // cloudStatus
+            // 
+            this.cloudStatus.Location = new System.Drawing.Point(3, 3);
+            this.cloudStatus.Name = "cloudStatus";
+            this.cloudStatus.Size = new System.Drawing.Size(875, 22);
+            this.cloudStatus.TabIndex = 0;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label25.Size = new System.Drawing.Size(55, 22);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Device ";
+            // 
+            // cloudDevice
+            // 
+            this.cloudDevice.Location = new System.Drawing.Point(64, 2);
+            this.cloudDevice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cloudDevice.Name = "cloudDevice";
+            this.cloudDevice.Size = new System.Drawing.Size(302, 22);
+            this.cloudDevice.TabIndex = 11;
+            this.cloudDevice.Text = "H4H1HKBLWK8G";
+            // 
+            // flowLayoutPanel29
+            // 
+            this.flowLayoutPanel29.Controls.Add(this.label26);
+            this.flowLayoutPanel29.Controls.Add(this.textBox7);
+            this.flowLayoutPanel29.Controls.Add(this.label27);
+            this.flowLayoutPanel29.Controls.Add(this.onlineCnt3);
+            this.flowLayoutPanel29.Location = new System.Drawing.Point(3, 79);
+            this.flowLayoutPanel29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel29.Name = "flowLayoutPanel29";
+            this.flowLayoutPanel29.Size = new System.Drawing.Size(881, 31);
+            this.flowLayoutPanel29.TabIndex = 20;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 0);
+            this.label26.Name = "label26";
+            this.label26.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label26.Size = new System.Drawing.Size(86, 22);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Activation ID";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(95, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(300, 22);
+            this.textBox7.TabIndex = 5;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(401, 0);
+            this.label27.Name = "label27";
+            this.label27.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label27.Size = new System.Drawing.Size(45, 22);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "Count";
+            // 
+            // onlineCnt3
+            // 
+            this.onlineCnt3.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.onlineCnt3.Name = "onlineCnt3";
+            this.onlineCnt3.Size = new System.Drawing.Size(44, 22);
+            this.onlineCnt3.TabIndex = 7;
+            // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.Controls.Add(this.btnOnlineActivate);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 114);
+            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(884, 37);
+            this.flowLayoutPanel11.TabIndex = 22;
+            // 
+            // btnOnlineActivate
+            // 
+            this.btnOnlineActivate.Location = new System.Drawing.Point(3, 2);
+            this.btnOnlineActivate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOnlineActivate.Name = "btnOnlineActivate";
+            this.btnOnlineActivate.Size = new System.Drawing.Size(150, 30);
+            this.btnOnlineActivate.TabIndex = 3;
+            this.btnOnlineActivate.Text = "Activate/Deactivate";
+            this.btnOnlineActivate.UseVisualStyleBackColor = true;
+            this.btnOnlineActivate.Click += new System.EventHandler(this.btnOnlineActivate_Click_1);
+            // 
             // flowLayoutPanel22
             // 
             this.flowLayoutPanel22.Controls.Add(this.textBox6);
-            this.flowLayoutPanel22.Location = new System.Drawing.Point(3, 339);
+            this.flowLayoutPanel22.Location = new System.Drawing.Point(3, 415);
             this.flowLayoutPanel22.Name = "flowLayoutPanel22";
             this.flowLayoutPanel22.Size = new System.Drawing.Size(891, 35);
-            this.flowLayoutPanel22.TabIndex = 18;
+            this.flowLayoutPanel22.TabIndex = 23;
             // 
             // textBox6
             // 
@@ -1100,26 +1379,191 @@ namespace CapabilityRequest
             this.textBox6.Size = new System.Drawing.Size(875, 22);
             this.textBox6.TabIndex = 0;
             // 
-            // flowLayoutPanel23
+            // label28
             // 
-            this.flowLayoutPanel23.Controls.Add(this.textBox7);
-            this.flowLayoutPanel23.Location = new System.Drawing.Point(3, 313);
-            this.flowLayoutPanel23.Name = "flowLayoutPanel23";
-            this.flowLayoutPanel23.Size = new System.Drawing.Size(910, 35);
-            this.flowLayoutPanel23.TabIndex = 18;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(401, 0);
+            this.label28.Name = "label28";
+            this.label28.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label28.Size = new System.Drawing.Size(45, 22);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Count";
             // 
-            // textBox7
+            // onlineCnt1
             // 
-            this.textBox7.Location = new System.Drawing.Point(3, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(875, 22);
-            this.textBox7.TabIndex = 0;
+            this.onlineCnt1.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.onlineCnt1.Name = "onlineCnt1";
+            this.onlineCnt1.Size = new System.Drawing.Size(44, 22);
+            this.onlineCnt1.TabIndex = 9;
+            this.onlineCnt1.Text = "1";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(401, 0);
+            this.label29.Name = "label29";
+            this.label29.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label29.Size = new System.Drawing.Size(45, 22);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Count";
+            // 
+            // offlineCnt1
+            // 
+            this.offlineCnt1.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.offlineCnt1.Name = "offlineCnt1";
+            this.offlineCnt1.Size = new System.Drawing.Size(44, 22);
+            this.offlineCnt1.TabIndex = 9;
+            this.offlineCnt1.Text = "1";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(502, 2);
+            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button15.Name = "button15";
+            this.button15.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button15.Size = new System.Drawing.Size(178, 32);
+            this.button15.TabIndex = 2;
+            this.button15.Text = "Display Trusted Storage";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // flowLayoutPanel30
+            // 
+            this.flowLayoutPanel30.Controls.Add(this.label30);
+            this.flowLayoutPanel30.Controls.Add(this.textBox9);
+            this.flowLayoutPanel30.Controls.Add(this.label31);
+            this.flowLayoutPanel30.Controls.Add(this.offlineCnt3);
+            this.flowLayoutPanel30.Location = new System.Drawing.Point(3, 79);
+            this.flowLayoutPanel30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel30.Name = "flowLayoutPanel30";
+            this.flowLayoutPanel30.Size = new System.Drawing.Size(884, 31);
+            this.flowLayoutPanel30.TabIndex = 21;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 0);
+            this.label30.Name = "label30";
+            this.label30.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label30.Size = new System.Drawing.Size(86, 22);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Activation ID";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(95, 2);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(300, 22);
+            this.textBox9.TabIndex = 5;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(401, 0);
+            this.label31.Name = "label31";
+            this.label31.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label31.Size = new System.Drawing.Size(45, 22);
+            this.label31.TabIndex = 6;
+            this.label31.Text = "Count";
+            // 
+            // offlineCnt3
+            // 
+            this.offlineCnt3.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.offlineCnt3.Name = "offlineCnt3";
+            this.offlineCnt3.Size = new System.Drawing.Size(44, 22);
+            this.offlineCnt3.TabIndex = 7;
+            // 
+            // flowLayoutPanel24
+            // 
+            this.flowLayoutPanel24.Controls.Add(this.TSFNOOffline);
+            this.flowLayoutPanel24.Location = new System.Drawing.Point(3, 175);
+            this.flowLayoutPanel24.Name = "flowLayoutPanel24";
+            this.flowLayoutPanel24.Size = new System.Drawing.Size(895, 278);
+            this.flowLayoutPanel24.TabIndex = 22;
+            // 
+            // flowLayoutPanel21
+            // 
+            this.flowLayoutPanel21.Controls.Add(this.label14);
+            this.flowLayoutPanel21.Controls.Add(this.txtReqRespFile);
+            this.flowLayoutPanel21.Controls.Add(this.button21);
+            this.flowLayoutPanel21.Controls.Add(this.button19);
+            this.flowLayoutPanel21.Controls.Add(this.button20);
+            this.flowLayoutPanel21.Location = new System.Drawing.Point(3, 114);
+            this.flowLayoutPanel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel21.Name = "flowLayoutPanel21";
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(884, 56);
+            this.flowLayoutPanel21.TabIndex = 23;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label14.Size = new System.Drawing.Size(30, 22);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "File";
+            // 
+            // txtReqRespFile
+            // 
+            this.txtReqRespFile.Location = new System.Drawing.Point(39, 2);
+            this.txtReqRespFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReqRespFile.Name = "txtReqRespFile";
+            this.txtReqRespFile.Size = new System.Drawing.Size(457, 22);
+            this.txtReqRespFile.TabIndex = 5;
+            // 
+            // button21
+            // 
+            this.button21.Image = global::CapabilityRequest.Properties.Resources.document_open_2;
+            this.button21.Location = new System.Drawing.Point(502, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(49, 38);
+            this.button21.TabIndex = 7;
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click_1);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(557, 2);
+            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(150, 45);
+            this.button19.TabIndex = 4;
+            this.button19.Text = "Generate Capability Request";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(713, 2);
+            this.button20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(150, 45);
+            this.button20.TabIndex = 6;
+            this.button20.Text = "Process Capability Response";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click_1);
+            // 
+            // TSFNOOffline
+            // 
+            this.TSFNOOffline.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.TSFNOOffline.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TSFNOOffline.ForeColor = System.Drawing.SystemColors.Window;
+            this.TSFNOOffline.Location = new System.Drawing.Point(3, 3);
+            this.TSFNOOffline.Name = "TSFNOOffline";
+            this.TSFNOOffline.Size = new System.Drawing.Size(878, 262);
+            this.TSFNOOffline.TabIndex = 20;
+            this.TSFNOOffline.Text = "";
             // 
             // DemoUserLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 450);
+            this.ClientSize = new System.Drawing.Size(1002, 516);
             this.Controls.Add(this.tabControl1);
             this.Name = "DemoUserLicense";
             this.Text = "Demo User License";
@@ -1130,7 +1574,6 @@ namespace CapabilityRequest
             this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
             this.flowLayoutPanel10.PerformLayout();
-            this.flowLayoutPanel11.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.flowLayoutPanel13.ResumeLayout(false);
             this.flowLayoutPanel14.ResumeLayout(false);
@@ -1159,16 +1602,30 @@ namespace CapabilityRequest
             this.flowLayoutPanel18.PerformLayout();
             this.flowLayoutPanel19.ResumeLayout(false);
             this.flowLayoutPanel19.PerformLayout();
-            this.flowLayoutPanel21.ResumeLayout(false);
-            this.flowLayoutPanel21.PerformLayout();
             this.flowLayoutPanel12.ResumeLayout(false);
             this.flowLayoutPanel12.PerformLayout();
             this.flowLayoutPanel20.ResumeLayout(false);
             this.flowLayoutPanel20.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.flowLayoutPanel23.ResumeLayout(false);
+            this.flowLayoutPanel25.ResumeLayout(false);
+            this.flowLayoutPanel25.PerformLayout();
+            this.flowLayoutPanel26.ResumeLayout(false);
+            this.flowLayoutPanel26.PerformLayout();
+            this.flowLayoutPanel27.ResumeLayout(false);
+            this.flowLayoutPanel27.PerformLayout();
+            this.flowLayoutPanel28.ResumeLayout(false);
+            this.flowLayoutPanel28.PerformLayout();
+            this.flowLayoutPanel29.ResumeLayout(false);
+            this.flowLayoutPanel29.PerformLayout();
+            this.flowLayoutPanel11.ResumeLayout(false);
             this.flowLayoutPanel22.ResumeLayout(false);
             this.flowLayoutPanel22.PerformLayout();
-            this.flowLayoutPanel23.ResumeLayout(false);
-            this.flowLayoutPanel23.PerformLayout();
+            this.flowLayoutPanel30.ResumeLayout(false);
+            this.flowLayoutPanel30.PerformLayout();
+            this.flowLayoutPanel24.ResumeLayout(false);
+            this.flowLayoutPanel21.ResumeLayout(false);
+            this.flowLayoutPanel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1186,9 +1643,7 @@ namespace CapabilityRequest
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox actID2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCnt;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.Button btnOnlineActivate;
+        private System.Windows.Forms.TextBox onlineCnt2;
         private System.Windows.Forms.RichTextBox LoggingOutput;
         private System.Windows.Forms.RichTextBox TSFNOOnline;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1237,21 +1692,13 @@ namespace CapabilityRequest
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox actOffline1;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox actOffline2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox cntOffline;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtReqRespFile;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.TextBox offlineCnt2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox TSFNOOffline;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox feature1Cnt;
         private System.Windows.Forms.Button button10;
@@ -1261,13 +1708,62 @@ namespace CapabilityRequest
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel25;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox cloudFeature1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox cloudVersion1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox cloudCount1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel26;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel27;
+        private System.Windows.Forms.Button btnCloudAcquire;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox cloudDevice;
+        private System.Windows.Forms.RichTextBox CloudTS;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel28;
+        private System.Windows.Forms.TextBox cloudStatus;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
+        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox onlineCnt3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
+        private System.Windows.Forms.Button btnOnlineActivate;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox onlineCnt1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox offlineCnt1;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel30;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox offlineCnt3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtReqRespFile;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel24;
+        private System.Windows.Forms.RichTextBox TSFNOOffline;
     }
 }

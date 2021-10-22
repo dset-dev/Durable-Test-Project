@@ -354,23 +354,24 @@ See the User Guide for more information.";
             }
             return ret;
         }
-        public bool DemoGenerateCapabilityRequest(string act_id, string act2_id, int txtCnt, string demoFileName)
+        public bool DemoGenerateCapabilityRequest(string act_id, string act2_id, int cnt1, int cnt2, string demoFileName)
         {
             // saving the capablity request to a file
             // create the capability request
-            int cnt = txtCnt;
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddRightsId(act_id, cnt);
+            options.AddRightsId(act_id, cnt1);
             if (act2_id.Trim() != "")
-                options.AddRightsId(act2_id, cnt);
-            // Optionally add capability requeest vendor dictionary items.
-            // if we don't include code below,
-            //request does not parse in FNO
+                options.AddRightsId(act2_id, cnt2);
+
             //options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
             //options.AddVendorDictionaryItem(dictionaryKey2, 123);
             options.Incremental = true;
             options.ForceResponse = true;
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
+            if (File.Exists(demoFileName))
+            {
+                File.Delete(demoFileName);
+            }
             if (Util.WriteData(demoFileName, capabilityRequestData.ToArray()))
             {
                 //MessageBox.Show(String.Format("Capability request data written to: {0}", demoFileName));
@@ -425,13 +426,13 @@ See the User Guide for more information.";
                 ShowPreviewResponse(binCapResponse);
             }
         }
-        public bool DemoSendCapabilityFeatureRequest(string feature, int cnt, string demoServerURL)
+        public bool DemoSendCapabilityFeatureRequest(string feature, string version, int cnt, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
 
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddDesiredFeature(new FeatureData(feature, "1.0", cnt));
+            options.AddDesiredFeature(new FeatureData(feature, version, cnt));
             //if (act2_id.Trim() != "")
             //    options.AddRightsId(act2_id, cnt);
 
@@ -460,15 +461,15 @@ See the User Guide for more information.";
             //MessageBox.Show("Registration succeeded");
             return true;
         }
-        public bool DemoSendCapabilityRequest(string act_id, string act2_id, int cnt, string demoServerURL)
+        public bool DemoSendCapabilityRequest(string act_id, string act2_id, int cnt1,int cnt2, string demoServerURL)
         {
             Util.DisplayInfoMessage("Creating the capability request");
 
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddRightsId(act_id, cnt);
+            options.AddRightsId(act_id, cnt1);
             if (act2_id.Trim()!="")
-                options.AddRightsId(act2_id, cnt);
+                options.AddRightsId(act2_id, cnt2);
 
             options.Incremental = true;
  //         options.ForceResponse = true;
