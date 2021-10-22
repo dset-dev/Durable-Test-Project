@@ -209,7 +209,6 @@ namespace CapabilityRequest
             this.txtCnt.Name = "txtCnt";
             this.txtCnt.Size = new System.Drawing.Size(44, 22);
             this.txtCnt.TabIndex = 7;
-            this.txtCnt.Text = "1";
             // 
             // flowLayoutPanel6
             // 

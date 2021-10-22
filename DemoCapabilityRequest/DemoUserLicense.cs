@@ -112,5 +112,179 @@ namespace CapabilityRequest
         {
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.AddExtension = false;
+                dialog.Filter = "Binary Files|*.bin|All Files|*.*";
+                dialog.Title = "Open License Data File";
+                if (!string.IsNullOrEmpty(strLastLicenseFilePath))
+                {
+                    dialog.InitialDirectory = strLastLicenseFilePath;
+                }
+                //else if (cbxLicenseFile.Items.Count >= 1)
+                //{
+                //    dialog.InitialDirectory = Path.GetDirectoryName(cbxLicenseFile.Items[0].ToString());
+                //}
+                DialogResult result = dialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    trialFileName.Text = dialog.FileName;
+                    //strLastLicenseFilePath = Path.GetDirectoryName(dialog.FileName);
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtTrials.Text = demo.DisplayTrialsFeatures();
+        }
+        string strLastDirPath = "";
+        private void button21_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.AddExtension = false;
+                dialog.Filter = "Binary Files|*.bin|All Files|*.*";
+                dialog.Title = "Open License Data File";
+                if (!string.IsNullOrEmpty(strLastLicenseFilePath))
+                {
+                    dialog.InitialDirectory = strLastDirPath;
+                }
+                //else if (cbxLicenseFile.Items.Count >= 1)
+                //{
+                //    dialog.InitialDirectory = Path.GetDirectoryName(cbxLicenseFile.Items[0].ToString());
+                //}
+                DialogResult result = dialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    txtReqRespFile.Text = dialog.FileName;
+                    strLastDirPath = Path.GetDirectoryName(dialog.FileName);
+                }
+            }
+        }
+
+        private void EntitlementIdSubmitButton_Click(object sender, EventArgs e)
+        {
+            TSFNOOnline.Text = demo.DisplayTSFeatures();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            TSFNOOffline.Text = demo.DisplayTSFeatures();
+        }
+
+        private void btnOnlineActivate_Click(object sender, EventArgs e)
+        {
+            if (actID1.Text.Length > 0)
+            {
+                var actId = actID1.Text;
+                var actId2 = actID2.Text;
+
+                //var feature = txtFeature.Text;
+                int cnt = Int32.Parse(txtCnt.Text);
+                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                // var serverURL = "http://localhost:7070/api/1.0/instances/~";
+               // var serverURL = "http://localhost:7070/fne/bin/capability";
+                 if (demo.DemoSendCapabilityRequest(actId, actId2, cnt, serverURL))
+               // if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
+                {
+                    TSFNOOnline.Text = $"Registration succeeded";
+                }
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (actID1.Text.Length > 0)
+            {
+                var actId = actID1.Text;
+                var actId2 = actID2.Text;
+                var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                if (demo.DemoUnregister(actId, actId2, serverURL))
+                {
+                    LoggingOutput.Text = $"License Removed";
+                }
+            }
+        }
+
+        private void AcquireLLS_Click(object sender, EventArgs e)
+        {
+            if (feature1.Text.Length > 0)
+            {
+
+                string feature = feature1.Text;
+                string version = feature1Version.Text;
+                int cnt = Int32.Parse(feature1Cnt.Text);
+                var serverURL = "http://localhost:7070/fne/bin/capability";
+
+                if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
+                {
+                    llsTSStatus.Text = $"Registration succeeded";
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txtTrials.Text= demo.DemoProcessTrialFile(trialFileName.Text);
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            llsTSStatus.Text= demo.DisplayTSFeatures();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (actOffline1.Text.Length > 0)
+            {
+                var actId = actOffline1.Text;
+                var actId2 = actOffline2.Text;
+                var fileName = txtReqRespFile.Text;
+                int cnt = Int32.Parse(cntOffline.Text);
+                if (demo.DemoGenerateCapabilityRequest(actId, actId2, cnt, fileName))
+                //if (demo.DemoCapabilityRequestTest(fileName))
+                {
+                    TSFNOOffline.Text = $"capabilityRequest.bin generated";
+                }
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (actOffline1.Text.Length > 0)
+            {
+                var actId = actOffline1.Text;
+                var actId2 = actOffline2.Text;
+                var fileName = txtReqRespFile.Text;
+                if (demo.DemoProcessCapabilityResponse(actId, actId2, fileName))
+                {
+                    TSFNOOffline.Text = $"capabilityResponse.bin processed";
+                }
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            TSFNOOffline.Text = "";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            TSFNOOnline.Text = "";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            llsTSStatus.Text = "";
+        }
     }
 }

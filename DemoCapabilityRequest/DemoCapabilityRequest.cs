@@ -156,7 +156,8 @@ See the User Guide for more information.";
            //         MessageBox.Show("Cannot initialize licensing at {0} ", strPath);
                 //using ()
                 {
-                   hostIDs = licensing.LicenseManager.HostIds;
+                    licensing.Administration.Delete(DeleteOption.PrivateData);
+                    hostIDs = licensing.LicenseManager.HostIds;
                    // if (hostIDs.ContainsKey(HostIdEnum.FLX_HOSTID_TYPE_USER))
                    // {
                         // select only the Ethernet addresses
@@ -210,11 +211,8 @@ See the User Guide for more information.";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-           //Application.Run(new DemoUserLicense());
-
-
-
+            //Application.Run(new Form1());
+           Application.Run(new DemoUserLicense());
         }
 
         public string DemoSelectHost(FlxDotNetClient.HostIdEnum hostId)
@@ -289,6 +287,62 @@ See the User Guide for more information.";
             }
            
             return "";
+        }
+        public string DemoProcessTrialFile(string trialFile)
+        {
+           // licensing.LicenseManager.ReturnAllLicenses();
+            string txtRet;
+
+              DateTime expirationDate;
+             if (licensing.LicenseManager.TrialIsLoaded(trialFile, out expirationDate))
+             {
+                 if (expirationDate.CompareTo(DateTime.Now) > 0)
+                 {
+                     txtRet = String.Format("Trial has already been loaded and will expire on {0}", expirationDate);
+                 }
+                 else
+                 {
+                     txtRet = "Trial has already been loaded and has expired";
+                 }
+                // return txtRet;
+             }
+           
+            // process trial into trials license source
+            try
+            {
+                licensing.LicenseManager.ProcessTrial(trialFile);
+
+      /**          IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(trialFile);
+                foreach (IFeature feature in collection)
+                {
+                    licenses.Add(new LicenseInfo(feature.Name, feature.Version, 1));
+                    try
+                    {
+                        ILicense acquiredLicense = licensing.LicenseManager.Acquire(feature.Name, feature.Version);
+                    }
+                    catch (Exception exc)
+                    {
+                        HandleException(exc);
+                        return exc.ToString();
+                    }
+                }
+      **/
+            }
+            catch (PublicLicensingException licensingException)
+            {
+                switch (licensingException.ErrorCode)
+                {
+                    case ErrorCode.FLXERR_TRIAL_ALREADY_LOADED:
+                    case ErrorCode.FLXERR_TRIAL_EXPIRED:
+                        HandleException(licensingException);
+                        return licensingException.ToString();
+                    default:
+                        throw licensingException;
+                }
+
+            }
+
+            return "Trial File loaded";
         }
         public string DemoDisplayLicenses()
         {
@@ -377,7 +431,7 @@ See the User Guide for more information.";
 
             // create the capability request
             ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
-            options.AddDesiredFeature(new FeatureData(feature, "1.0", 1));
+            options.AddDesiredFeature(new FeatureData(feature, "1.0", cnt));
             //if (act2_id.Trim() != "")
             //    options.AddRightsId(act2_id, cnt);
 
