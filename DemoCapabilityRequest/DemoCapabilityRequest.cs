@@ -146,7 +146,7 @@ See the User Guide for more information.";
                 //string strPath = "C:\\Users\\e0067804\\flexnetls\\";
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
-
+          
                 //string trialPath= Util.()
                licensing = LicensingFactory.GetLicensing(
                          IdentityClient.IdentityData,
@@ -215,6 +215,12 @@ See the User Guide for more information.";
            Application.Run(new DemoUserLicense());
         }
 
+        public bool ReturnTrials()
+        {
+            licensing.Administration.Delete(DeleteOption.Trials);
+            licensing.Administration.Delete(DeleteOption.TrustedStorage);
+            return true;
+        }
         public string DemoSelectHost(FlxDotNetClient.HostIdEnum hostId)
         {
             return hostIDs[hostId][0];

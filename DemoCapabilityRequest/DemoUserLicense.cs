@@ -332,5 +332,15 @@ namespace CapabilityRequest
         {
             CloudTS.Text = demo.DisplayTSFeatures();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            bool res = demo.ReturnTrials();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            CloudTS.Text = "";
+        }
     }
 }
