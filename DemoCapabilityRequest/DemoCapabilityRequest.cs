@@ -125,7 +125,7 @@ See the User Guide for more information.";
             Application.Run(new Form1());
         }
         [STAThread]
-        public static void Main()
+        public static void Main2()
         {
             /*  if (!ValidateCommandLineArgs(args))
               {

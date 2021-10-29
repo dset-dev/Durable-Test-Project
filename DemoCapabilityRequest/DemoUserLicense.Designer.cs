@@ -47,7 +47,7 @@ namespace CapabilityRequest
             this.LoggingOutput = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel29 = new System.Windows.Forms.FlowLayoutPanel();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.actID3 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.onlineCnt3 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
@@ -127,7 +127,7 @@ namespace CapabilityRequest
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel30 = new System.Windows.Forms.FlowLayoutPanel();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.actOffline3 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.offlineCnt3 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
@@ -373,7 +373,7 @@ namespace CapabilityRequest
             // flowLayoutPanel29
             // 
             this.flowLayoutPanel29.Controls.Add(this.label26);
-            this.flowLayoutPanel29.Controls.Add(this.textBox7);
+            this.flowLayoutPanel29.Controls.Add(this.actID3);
             this.flowLayoutPanel29.Controls.Add(this.label27);
             this.flowLayoutPanel29.Controls.Add(this.onlineCnt3);
             this.flowLayoutPanel29.Location = new System.Drawing.Point(3, 79);
@@ -392,13 +392,13 @@ namespace CapabilityRequest
             this.label26.TabIndex = 4;
             this.label26.Text = "Activation ID";
             // 
-            // textBox7
+            // actID3
             // 
-            this.textBox7.Location = new System.Drawing.Point(95, 2);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(300, 22);
-            this.textBox7.TabIndex = 5;
+            this.actID3.Location = new System.Drawing.Point(95, 2);
+            this.actID3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.actID3.Name = "actID3";
+            this.actID3.Size = new System.Drawing.Size(300, 22);
+            this.actID3.TabIndex = 5;
             // 
             // label27
             // 
@@ -474,6 +474,7 @@ namespace CapabilityRequest
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Local License Server";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // flowLayoutPanel13
             // 
@@ -758,8 +759,6 @@ namespace CapabilityRequest
             this.trialFileName.Name = "trialFileName";
             this.trialFileName.Size = new System.Drawing.Size(584, 22);
             this.trialFileName.TabIndex = 3;
-            this.trialFileName.Text = "C:\\revenera\\BuildSample\\flexnet_client-xt-dotnet-x64_windows-2021.09.0\\bin\\tools\\" +
-    "license.bin";
             // 
             // button3
             // 
@@ -942,8 +941,6 @@ namespace CapabilityRequest
             this.licFileName.Name = "licFileName";
             this.licFileName.Size = new System.Drawing.Size(693, 22);
             this.licFileName.TabIndex = 3;
-            this.licFileName.Text = "C:\\revenera\\BuildSample\\flexnet_client-xt-dotnet-x64_windows-2021.09.0\\bin\\tools\\" +
-    "license.bin";
             // 
             // button1
             // 
@@ -1179,7 +1176,7 @@ namespace CapabilityRequest
             // flowLayoutPanel30
             // 
             this.flowLayoutPanel30.Controls.Add(this.label30);
-            this.flowLayoutPanel30.Controls.Add(this.textBox9);
+            this.flowLayoutPanel30.Controls.Add(this.actOffline3);
             this.flowLayoutPanel30.Controls.Add(this.label31);
             this.flowLayoutPanel30.Controls.Add(this.offlineCnt3);
             this.flowLayoutPanel30.Location = new System.Drawing.Point(3, 79);
@@ -1198,13 +1195,13 @@ namespace CapabilityRequest
             this.label30.TabIndex = 4;
             this.label30.Text = "Activation ID";
             // 
-            // textBox9
+            // actOffline3
             // 
-            this.textBox9.Location = new System.Drawing.Point(95, 2);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(300, 22);
-            this.textBox9.TabIndex = 5;
+            this.actOffline3.Location = new System.Drawing.Point(95, 2);
+            this.actOffline3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.actOffline3.Name = "actOffline3";
+            this.actOffline3.Size = new System.Drawing.Size(300, 22);
+            this.actOffline3.TabIndex = 5;
             // 
             // label31
             // 
@@ -1753,7 +1750,7 @@ namespace CapabilityRequest
         private System.Windows.Forms.TextBox cloudStatus;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox actID3;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox onlineCnt3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
@@ -1767,7 +1764,7 @@ namespace CapabilityRequest
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel30;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox actOffline3;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox offlineCnt3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
@@ -1779,5 +1776,33 @@ namespace CapabilityRequest
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel24;
         private System.Windows.Forms.RichTextBox TSFNOOffline;
         private System.Windows.Forms.Button button12;
+    }
+    public class LicenseInfo
+    {
+        private string name;
+        private string version;
+        private int count;
+
+        public LicenseInfo(string name, string version, int count)
+        {
+            this.name = name;
+            this.version = version;
+            this.count = count;
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public string Version
+        {
+            get { return version; }
+        }
+
+        public int Count
+        {
+            get { return count; }
+        }
     }
 }

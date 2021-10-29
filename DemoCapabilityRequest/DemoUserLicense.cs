@@ -8,14 +8,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using static CapabilityRequest.DemoCapabilityRequest;
+//using static CapabilityRequest.DemoCapabilityRequest;
 
 namespace CapabilityRequest
 {
     
     public partial class DemoUserLicense : Form
     {
-        CapabilityRequest.DemoCapabilityRequest demo;
+        //CapabilityRequest.DemoCapabilityRequest demo;
+        CapabilityRequest.Demo demo;
         public DemoUserLicense()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace CapabilityRequest
                 txtException.Text = ret;
         }
         private Dictionary<string, HostIdEnum> hostIdTypesByText = new Dictionary<string, HostIdEnum>();
-        
+        //To-do: add more host id types, including VM, and two ethernet hosts
         private void InitHostIdTypes()
         {
             int selectedIndex = 0;
@@ -60,7 +61,8 @@ namespace CapabilityRequest
         }
         private void DemoUserLicense_Load(object sender, EventArgs e)
         {
-            demo = new DemoCapabilityRequest();
+            //demo = new DemoCapabilityRequest();
+            demo = new Demo();
         }
         string strLastLicenseFilePath= "C:\\\\revenera\\BuildSample\\flexnet_client-xt-dotnet-x64_windows-2021.09.0\\bin\tools\\";
         private void button1_Click(object sender, EventArgs e)
@@ -262,10 +264,12 @@ namespace CapabilityRequest
             {
                 var actId = actID1.Text;
                 var actId2 = actID2.Text;
+                var actId3 = actID3.Text;
                 int cnt1 = Int32.Parse(onlineCnt1.Text);
                 int cnt2 = Int32.Parse(onlineCnt2.Text);
+                int cnt3 = Int32.Parse(onlineCnt3.Text);
                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
-                if (demo.DemoSendCapabilityRequest(actId, actId2, cnt1,cnt2, serverURL))
+                if (demo.DemoSendCapabilityRequest(actId, actId2, actId3, cnt1,cnt2,cnt3, serverURL))
                 // if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
                 {
                     TSFNOOnline.Text = $"Registration succeeded";
@@ -341,6 +345,11 @@ namespace CapabilityRequest
         private void button11_Click(object sender, EventArgs e)
         {
             CloudTS.Text = "";
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
