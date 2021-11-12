@@ -146,7 +146,10 @@ See the User Guide for more information.";
         }
         public string DemoSelectHost(FlxDotNetClient.HostIdEnum hostId)
         {
-            return hostIDs[hostId][0];
+            if (hostIDs.ContainsKey(hostId))
+                return hostIDs[hostId][0];
+            else
+                return "key not found";
         }
         public void DemoRefreshLicensingHost(string hostId)
         {

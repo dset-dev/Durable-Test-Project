@@ -36,7 +36,8 @@ namespace CapabilityRequest
                 txtException.Text = ret;
         }
         private Dictionary<string, HostIdEnum> hostIdTypesByText = new Dictionary<string, HostIdEnum>();
-        //To-do: add more host id types, including VM, and two ethernet hosts
+        //To-do: add more host id types, including two ethernet hosts
+        //to-do: need to display a listbox when selecting ethernet
         private void InitHostIdTypes()
         {
             int selectedIndex = 0;
@@ -47,7 +48,8 @@ namespace CapabilityRequest
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_STRING ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_USER ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_INTERNET ||
-                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_INTERNET6)
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_INTERNET6 ||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_VM_UUID)
                 {
                     if (hostIdType == HostIdEnum.FLX_HOSTID_TYPE_STRING)
                     {
