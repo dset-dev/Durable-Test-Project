@@ -263,11 +263,18 @@ namespace CapabilityRequest
             if (actID1.Text.Length > 0)
             {
                 var actId = actID1.Text;
-                var actId2 = actID2.Text;
-                var actId3 = actID3.Text;
                 int cnt1 = Int32.Parse(onlineCnt1.Text);
-                int cnt2 = Int32.Parse(onlineCnt2.Text);
-                int cnt3 = Int32.Parse(onlineCnt3.Text);
+                var actId2="";
+                var actId3="";
+                int cnt2 = 0;
+                int cnt3 = 0;
+                if (actID2.Text.Length > 0)
+                {
+                    actId2 = actID2.Text;
+                    actId3 = actID3.Text;
+                    cnt2 = Int32.Parse(onlineCnt2.Text);
+                    cnt3 = Int32.Parse(onlineCnt3.Text);
+                }
                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
                 if (demo.DemoSendCapabilityRequest(actId, actId2, actId3, cnt1,cnt2,cnt3, serverURL))
                 // if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))

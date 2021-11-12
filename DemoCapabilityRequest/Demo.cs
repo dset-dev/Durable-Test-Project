@@ -66,12 +66,14 @@ See the User Guide for more information.";
                 return;
             }
 
+            
+
             try
             {
                 string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
-                licensing = LicensingFactory.GetLicensing(
+                licensing = LicensingFactory.GetLicensing( 
                           IdentityClient.IdentityData,
                            strPath,
                            "");
@@ -79,7 +81,14 @@ See the User Guide for more information.";
                     licensing.Administration.Delete(DeleteOption.PrivateData);
                     hostIDs = licensing.LicenseManager.HostIds;
 
-                    List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
+                //load trial data if not already loaded
+                TrialEaton trialEaton = new TrialEaton();
+                byte[] trialData = trialEaton.TrialData;
+                licensing.LicenseManager.ProcessTrial(trialData);
+
+
+
+                List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
                     //Chapter 6 Using the FlexNet Embedded APIs
                     // Common Steps to Prepare for Licensing
 
