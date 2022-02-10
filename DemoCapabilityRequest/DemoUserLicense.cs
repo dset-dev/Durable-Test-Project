@@ -249,8 +249,9 @@ namespace CapabilityRequest
                 int cnt = Int32.Parse(cloudCount1.Text);
                 string device = cloudDevice.Text;
 
-                var serverURL = "https://flex1369-uat.compliance.flexnetoperations.com:443/instances/"+device+ "/request";
-                
+                var serverURL="https://eaton-uat.compliance.flexnetoperations.com/instances/" + device + "/request";
+                //var serverURL = "https://flex1369-uat.compliance.flexnetoperations.com:443/instances/"+device+ "/request";
+
 
                 if (demo.DemoSendCapabilityFeatureRequest(feature, version, cnt, serverURL))
                 {
