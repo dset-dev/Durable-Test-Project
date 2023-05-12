@@ -76,6 +76,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
             this.AcquireLLS = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.cmdLLSPreview = new System.Windows.Forms.Button();
             this.llsTSStatus = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -99,6 +100,7 @@ namespace CapabilityRequest
             this.label2 = new System.Windows.Forms.Label();
             this.lstHostType = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -164,6 +166,27 @@ namespace CapabilityRequest
             this.CloudTS = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
             this.cloudStatus = new System.Windows.Forms.TextBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel31 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel33 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.LLSHostID = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel32 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.LLSFeature1 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.LLSVersion1 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.LLSCount1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel34 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.LLSStatus = new System.Windows.Forms.RichTextBox();
+            this.flowLayoutPanel35 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox16 = new System.Windows.Forms.TextBox();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
@@ -201,6 +224,12 @@ namespace CapabilityRequest
             this.flowLayoutPanel26.SuspendLayout();
             this.flowLayoutPanel27.SuspendLayout();
             this.flowLayoutPanel28.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.flowLayoutPanel31.SuspendLayout();
+            this.flowLayoutPanel33.SuspendLayout();
+            this.flowLayoutPanel32.SuspendLayout();
+            this.flowLayoutPanel34.SuspendLayout();
+            this.flowLayoutPanel35.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -252,32 +281,32 @@ namespace CapabilityRequest
             this.EntitlementIdFieldDescriptor.Location = new System.Drawing.Point(3, 0);
             this.EntitlementIdFieldDescriptor.Name = "EntitlementIdFieldDescriptor";
             this.EntitlementIdFieldDescriptor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(86, 22);
+            this.EntitlementIdFieldDescriptor.Size = new System.Drawing.Size(81, 21);
             this.EntitlementIdFieldDescriptor.TabIndex = 3;
             this.EntitlementIdFieldDescriptor.Text = "Activation ID";
             // 
             // actID1
             // 
-            this.actID1.Location = new System.Drawing.Point(95, 2);
+            this.actID1.Location = new System.Drawing.Point(90, 2);
             this.actID1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actID1.Name = "actID1";
             this.actID1.Size = new System.Drawing.Size(300, 22);
             this.actID1.TabIndex = 4;
-            this.actID1.Text = "ce4e-155e-f7d0-4399-aca1-6967-9688-9483";
+            this.actID1.Text = "3cc8-ebdf-bf77-4fb3-8434-543b-049a-a1b9";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(401, 0);
+            this.label28.Location = new System.Drawing.Point(396, 0);
             this.label28.Name = "label28";
             this.label28.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label28.Size = new System.Drawing.Size(45, 22);
+            this.label28.Size = new System.Drawing.Size(41, 21);
             this.label28.TabIndex = 8;
             this.label28.Text = "Count";
             // 
             // onlineCnt1
             // 
-            this.onlineCnt1.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt1.Location = new System.Drawing.Point(443, 2);
             this.onlineCnt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.onlineCnt1.Name = "onlineCnt1";
             this.onlineCnt1.Size = new System.Drawing.Size(44, 22);
@@ -286,7 +315,7 @@ namespace CapabilityRequest
             // 
             // EntitlementIdSubmitButton
             // 
-            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(502, 2);
+            this.EntitlementIdSubmitButton.Location = new System.Drawing.Point(493, 2);
             this.EntitlementIdSubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EntitlementIdSubmitButton.Name = "EntitlementIdSubmitButton";
             this.EntitlementIdSubmitButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -298,7 +327,7 @@ namespace CapabilityRequest
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(686, 2);
+            this.button8.Location = new System.Drawing.Point(677, 2);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -326,13 +355,13 @@ namespace CapabilityRequest
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label5.Size = new System.Drawing.Size(86, 22);
+            this.label5.Size = new System.Drawing.Size(81, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Activation ID";
             // 
             // actID2
             // 
-            this.actID2.Location = new System.Drawing.Point(95, 2);
+            this.actID2.Location = new System.Drawing.Point(90, 2);
             this.actID2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actID2.Name = "actID2";
             this.actID2.Size = new System.Drawing.Size(300, 22);
@@ -341,16 +370,16 @@ namespace CapabilityRequest
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(401, 0);
+            this.label6.Location = new System.Drawing.Point(396, 0);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label6.Size = new System.Drawing.Size(45, 22);
+            this.label6.Size = new System.Drawing.Size(41, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Count";
             // 
             // onlineCnt2
             // 
-            this.onlineCnt2.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt2.Location = new System.Drawing.Point(443, 2);
             this.onlineCnt2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.onlineCnt2.Name = "onlineCnt2";
             this.onlineCnt2.Size = new System.Drawing.Size(44, 22);
@@ -388,13 +417,13 @@ namespace CapabilityRequest
             this.label26.Location = new System.Drawing.Point(3, 0);
             this.label26.Name = "label26";
             this.label26.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label26.Size = new System.Drawing.Size(86, 22);
+            this.label26.Size = new System.Drawing.Size(81, 21);
             this.label26.TabIndex = 4;
             this.label26.Text = "Activation ID";
             // 
             // actID3
             // 
-            this.actID3.Location = new System.Drawing.Point(95, 2);
+            this.actID3.Location = new System.Drawing.Point(90, 2);
             this.actID3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actID3.Name = "actID3";
             this.actID3.Size = new System.Drawing.Size(300, 22);
@@ -403,16 +432,16 @@ namespace CapabilityRequest
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(401, 0);
+            this.label27.Location = new System.Drawing.Point(396, 0);
             this.label27.Name = "label27";
             this.label27.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label27.Size = new System.Drawing.Size(45, 22);
+            this.label27.Size = new System.Drawing.Size(41, 21);
             this.label27.TabIndex = 6;
             this.label27.Text = "Count";
             // 
             // onlineCnt3
             // 
-            this.onlineCnt3.Location = new System.Drawing.Point(452, 2);
+            this.onlineCnt3.Location = new System.Drawing.Point(443, 2);
             this.onlineCnt3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.onlineCnt3.Name = "onlineCnt3";
             this.onlineCnt3.Size = new System.Drawing.Size(44, 22);
@@ -510,13 +539,13 @@ namespace CapabilityRequest
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label8.Size = new System.Drawing.Size(57, 22);
+            this.label8.Size = new System.Drawing.Size(53, 21);
             this.label8.TabIndex = 3;
             this.label8.Text = "Feature";
             // 
             // feature1
             // 
-            this.feature1.Location = new System.Drawing.Point(66, 2);
+            this.feature1.Location = new System.Drawing.Point(62, 2);
             this.feature1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.feature1.Name = "feature1";
             this.feature1.Size = new System.Drawing.Size(300, 22);
@@ -526,16 +555,16 @@ namespace CapabilityRequest
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(372, 0);
+            this.label10.Location = new System.Drawing.Point(368, 0);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label10.Size = new System.Drawing.Size(56, 22);
+            this.label10.Size = new System.Drawing.Size(53, 21);
             this.label10.TabIndex = 8;
             this.label10.Text = "Version";
             // 
             // feature1Version
             // 
-            this.feature1Version.Location = new System.Drawing.Point(434, 2);
+            this.feature1Version.Location = new System.Drawing.Point(427, 2);
             this.feature1Version.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.feature1Version.Name = "feature1Version";
             this.feature1Version.Size = new System.Drawing.Size(44, 22);
@@ -545,16 +574,16 @@ namespace CapabilityRequest
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(484, 0);
+            this.label7.Location = new System.Drawing.Point(477, 0);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label7.Size = new System.Drawing.Size(45, 22);
+            this.label7.Size = new System.Drawing.Size(41, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Count";
             // 
             // feature1Cnt
             // 
-            this.feature1Cnt.Location = new System.Drawing.Point(535, 2);
+            this.feature1Cnt.Location = new System.Drawing.Point(524, 2);
             this.feature1Cnt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.feature1Cnt.Name = "feature1Cnt";
             this.feature1Cnt.Size = new System.Drawing.Size(44, 22);
@@ -563,7 +592,7 @@ namespace CapabilityRequest
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(585, 2);
+            this.button10.Location = new System.Drawing.Point(574, 2);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -575,7 +604,7 @@ namespace CapabilityRequest
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(769, 2);
+            this.button7.Location = new System.Drawing.Point(758, 2);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -605,13 +634,13 @@ namespace CapabilityRequest
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label9.Size = new System.Drawing.Size(57, 22);
+            this.label9.Size = new System.Drawing.Size(53, 21);
             this.label9.TabIndex = 3;
             this.label9.Text = "Feature";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(66, 2);
+            this.textBox3.Location = new System.Drawing.Point(62, 2);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(300, 22);
@@ -620,16 +649,16 @@ namespace CapabilityRequest
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(372, 0);
+            this.label15.Location = new System.Drawing.Point(368, 0);
             this.label15.Name = "label15";
             this.label15.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label15.Size = new System.Drawing.Size(56, 22);
+            this.label15.Size = new System.Drawing.Size(53, 21);
             this.label15.TabIndex = 12;
             this.label15.Text = "Version";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(434, 2);
+            this.textBox2.Location = new System.Drawing.Point(427, 2);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(44, 22);
@@ -638,16 +667,16 @@ namespace CapabilityRequest
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(484, 0);
+            this.label16.Location = new System.Drawing.Point(477, 0);
             this.label16.Name = "label16";
             this.label16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label16.Size = new System.Drawing.Size(45, 22);
+            this.label16.Size = new System.Drawing.Size(41, 21);
             this.label16.TabIndex = 14;
             this.label16.Text = "Count";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(535, 2);
+            this.textBox4.Location = new System.Drawing.Point(524, 2);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(44, 22);
@@ -657,6 +686,7 @@ namespace CapabilityRequest
             // 
             this.flowLayoutPanel16.Controls.Add(this.AcquireLLS);
             this.flowLayoutPanel16.Controls.Add(this.label17);
+            this.flowLayoutPanel16.Controls.Add(this.cmdLLSPreview);
             this.flowLayoutPanel16.Location = new System.Drawing.Point(3, 78);
             this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
@@ -680,9 +710,20 @@ namespace CapabilityRequest
             this.label17.Location = new System.Drawing.Point(159, 0);
             this.label17.Name = "label17";
             this.label17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label17.Size = new System.Drawing.Size(198, 22);
+            this.label17.Size = new System.Drawing.Size(180, 21);
             this.label17.TabIndex = 9;
             this.label17.Text = "(Use negative count to return)";
+            // 
+            // cmdLLSPreview
+            // 
+            this.cmdLLSPreview.Location = new System.Drawing.Point(345, 2);
+            this.cmdLLSPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmdLLSPreview.Name = "cmdLLSPreview";
+            this.cmdLLSPreview.Size = new System.Drawing.Size(150, 30);
+            this.cmdLLSPreview.TabIndex = 10;
+            this.cmdLLSPreview.Text = "Preview";
+            this.cmdLLSPreview.UseVisualStyleBackColor = true;
+            this.cmdLLSPreview.Click += new System.EventHandler(this.cmdLLSPreview_Click);
             // 
             // llsTSStatus
             // 
@@ -749,13 +790,13 @@ namespace CapabilityRequest
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "File     ";
             // 
             // trialFileName
             // 
-            this.trialFileName.Location = new System.Drawing.Point(59, 3);
+            this.trialFileName.Location = new System.Drawing.Point(53, 3);
             this.trialFileName.Name = "trialFileName";
             this.trialFileName.Size = new System.Drawing.Size(584, 22);
             this.trialFileName.TabIndex = 3;
@@ -763,7 +804,7 @@ namespace CapabilityRequest
             // button3
             // 
             this.button3.Image = global::CapabilityRequest.Properties.Resources.document_open_2;
-            this.button3.Location = new System.Drawing.Point(649, 3);
+            this.button3.Location = new System.Drawing.Point(643, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(49, 38);
             this.button3.TabIndex = 4;
@@ -772,7 +813,7 @@ namespace CapabilityRequest
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(704, 3);
+            this.button4.Location = new System.Drawing.Point(698, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 38);
             this.button4.TabIndex = 5;
@@ -782,7 +823,7 @@ namespace CapabilityRequest
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(795, 3);
+            this.button5.Location = new System.Drawing.Point(789, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 38);
             this.button5.TabIndex = 6;
@@ -844,7 +885,7 @@ namespace CapabilityRequest
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 420);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(976, 420);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -855,10 +896,11 @@ namespace CapabilityRequest
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.Controls.Add(this.lstHostType);
             this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.button22);
             this.flowLayoutPanel2.Controls.Add(this.button12);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(898, 31);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(947, 31);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -866,13 +908,13 @@ namespace CapabilityRequest
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Host Id";
             // 
             // txtHostID
             // 
-            this.txtHostID.Location = new System.Drawing.Point(61, 3);
+            this.txtHostID.Location = new System.Drawing.Point(58, 3);
             this.txtHostID.Name = "txtHostID";
             this.txtHostID.Size = new System.Drawing.Size(202, 22);
             this.txtHostID.TabIndex = 2;
@@ -880,16 +922,16 @@ namespace CapabilityRequest
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(269, 0);
+            this.label2.Location = new System.Drawing.Point(266, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Host Id Type";
             // 
             // lstHostType
             // 
             this.lstHostType.FormattingEnabled = true;
-            this.lstHostType.Location = new System.Drawing.Point(363, 3);
+            this.lstHostType.Location = new System.Drawing.Point(356, 3);
             this.lstHostType.Name = "lstHostType";
             this.lstHostType.Size = new System.Drawing.Size(310, 24);
             this.lstHostType.TabIndex = 7;
@@ -897,7 +939,7 @@ namespace CapabilityRequest
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(679, 3);
+            this.button2.Location = new System.Drawing.Point(672, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 28);
             this.button2.TabIndex = 6;
@@ -905,9 +947,19 @@ namespace CapabilityRequest
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(763, 3);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(85, 28);
+            this.button22.TabIndex = 9;
+            this.button22.Text = "Reset TS";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(770, 3);
+            this.button12.Location = new System.Drawing.Point(854, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(85, 28);
             this.button12.TabIndex = 8;
@@ -931,13 +983,13 @@ namespace CapabilityRequest
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "File     ";
             // 
             // licFileName
             // 
-            this.licFileName.Location = new System.Drawing.Point(59, 3);
+            this.licFileName.Location = new System.Drawing.Point(53, 3);
             this.licFileName.Name = "licFileName";
             this.licFileName.Size = new System.Drawing.Size(693, 22);
             this.licFileName.TabIndex = 3;
@@ -945,7 +997,7 @@ namespace CapabilityRequest
             // button1
             // 
             this.button1.Image = global::CapabilityRequest.Properties.Resources.document_open_2;
-            this.button1.Location = new System.Drawing.Point(758, 3);
+            this.button1.Location = new System.Drawing.Point(752, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(49, 38);
             this.button1.TabIndex = 4;
@@ -954,7 +1006,7 @@ namespace CapabilityRequest
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(813, 3);
+            this.btnLoad.Location = new System.Drawing.Point(807, 3);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(85, 38);
             this.btnLoad.TabIndex = 5;
@@ -1004,7 +1056,8 @@ namespace CapabilityRequest
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(990, 514);
@@ -1054,13 +1107,13 @@ namespace CapabilityRequest
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label11.Size = new System.Drawing.Size(86, 22);
+            this.label11.Size = new System.Drawing.Size(81, 21);
             this.label11.TabIndex = 3;
             this.label11.Text = "Activation ID";
             // 
             // actOffline1
             // 
-            this.actOffline1.Location = new System.Drawing.Point(95, 2);
+            this.actOffline1.Location = new System.Drawing.Point(90, 2);
             this.actOffline1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actOffline1.Name = "actOffline1";
             this.actOffline1.Size = new System.Drawing.Size(300, 22);
@@ -1070,16 +1123,16 @@ namespace CapabilityRequest
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(401, 0);
+            this.label29.Location = new System.Drawing.Point(396, 0);
             this.label29.Name = "label29";
             this.label29.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label29.Size = new System.Drawing.Size(45, 22);
+            this.label29.Size = new System.Drawing.Size(41, 21);
             this.label29.TabIndex = 8;
             this.label29.Text = "Count";
             // 
             // offlineCnt1
             // 
-            this.offlineCnt1.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt1.Location = new System.Drawing.Point(443, 2);
             this.offlineCnt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.offlineCnt1.Name = "offlineCnt1";
             this.offlineCnt1.Size = new System.Drawing.Size(44, 22);
@@ -1088,7 +1141,7 @@ namespace CapabilityRequest
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(502, 2);
+            this.button15.Location = new System.Drawing.Point(493, 2);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button15.Name = "button15";
             this.button15.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -1100,7 +1153,7 @@ namespace CapabilityRequest
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(686, 2);
+            this.button16.Location = new System.Drawing.Point(677, 2);
             this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button16.Name = "button16";
             this.button16.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -1128,13 +1181,13 @@ namespace CapabilityRequest
             this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label12.Size = new System.Drawing.Size(86, 22);
+            this.label12.Size = new System.Drawing.Size(81, 21);
             this.label12.TabIndex = 4;
             this.label12.Text = "Activation ID";
             // 
             // actOffline2
             // 
-            this.actOffline2.Location = new System.Drawing.Point(95, 2);
+            this.actOffline2.Location = new System.Drawing.Point(90, 2);
             this.actOffline2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actOffline2.Name = "actOffline2";
             this.actOffline2.Size = new System.Drawing.Size(300, 22);
@@ -1143,16 +1196,16 @@ namespace CapabilityRequest
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(401, 0);
+            this.label13.Location = new System.Drawing.Point(396, 0);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label13.Size = new System.Drawing.Size(45, 22);
+            this.label13.Size = new System.Drawing.Size(41, 21);
             this.label13.TabIndex = 6;
             this.label13.Text = "Count";
             // 
             // offlineCnt2
             // 
-            this.offlineCnt2.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt2.Location = new System.Drawing.Point(443, 2);
             this.offlineCnt2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.offlineCnt2.Name = "offlineCnt2";
             this.offlineCnt2.Size = new System.Drawing.Size(44, 22);
@@ -1191,13 +1244,13 @@ namespace CapabilityRequest
             this.label30.Location = new System.Drawing.Point(3, 0);
             this.label30.Name = "label30";
             this.label30.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label30.Size = new System.Drawing.Size(86, 22);
+            this.label30.Size = new System.Drawing.Size(81, 21);
             this.label30.TabIndex = 4;
             this.label30.Text = "Activation ID";
             // 
             // actOffline3
             // 
-            this.actOffline3.Location = new System.Drawing.Point(95, 2);
+            this.actOffline3.Location = new System.Drawing.Point(90, 2);
             this.actOffline3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actOffline3.Name = "actOffline3";
             this.actOffline3.Size = new System.Drawing.Size(300, 22);
@@ -1206,16 +1259,16 @@ namespace CapabilityRequest
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(401, 0);
+            this.label31.Location = new System.Drawing.Point(396, 0);
             this.label31.Name = "label31";
             this.label31.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label31.Size = new System.Drawing.Size(45, 22);
+            this.label31.Size = new System.Drawing.Size(41, 21);
             this.label31.TabIndex = 6;
             this.label31.Text = "Count";
             // 
             // offlineCnt3
             // 
-            this.offlineCnt3.Location = new System.Drawing.Point(452, 2);
+            this.offlineCnt3.Location = new System.Drawing.Point(443, 2);
             this.offlineCnt3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.offlineCnt3.Name = "offlineCnt3";
             this.offlineCnt3.Size = new System.Drawing.Size(44, 22);
@@ -1240,13 +1293,13 @@ namespace CapabilityRequest
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
             this.label14.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label14.Size = new System.Drawing.Size(30, 22);
+            this.label14.Size = new System.Drawing.Size(29, 21);
             this.label14.TabIndex = 4;
             this.label14.Text = "File";
             // 
             // txtReqRespFile
             // 
-            this.txtReqRespFile.Location = new System.Drawing.Point(39, 2);
+            this.txtReqRespFile.Location = new System.Drawing.Point(38, 2);
             this.txtReqRespFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtReqRespFile.Name = "txtReqRespFile";
             this.txtReqRespFile.Size = new System.Drawing.Size(457, 22);
@@ -1255,7 +1308,7 @@ namespace CapabilityRequest
             // button21
             // 
             this.button21.Image = global::CapabilityRequest.Properties.Resources.document_open_2;
-            this.button21.Location = new System.Drawing.Point(502, 3);
+            this.button21.Location = new System.Drawing.Point(501, 3);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(49, 38);
             this.button21.TabIndex = 7;
@@ -1264,7 +1317,7 @@ namespace CapabilityRequest
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(557, 2);
+            this.button19.Location = new System.Drawing.Point(556, 2);
             this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(150, 45);
@@ -1275,7 +1328,7 @@ namespace CapabilityRequest
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(713, 2);
+            this.button20.Location = new System.Drawing.Point(712, 2);
             this.button20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(150, 45);
@@ -1348,32 +1401,32 @@ namespace CapabilityRequest
             this.label18.Location = new System.Drawing.Point(3, 0);
             this.label18.Name = "label18";
             this.label18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label18.Size = new System.Drawing.Size(57, 22);
+            this.label18.Size = new System.Drawing.Size(53, 21);
             this.label18.TabIndex = 3;
             this.label18.Text = "Feature";
             // 
             // cloudFeature1
             // 
-            this.cloudFeature1.Location = new System.Drawing.Point(66, 2);
+            this.cloudFeature1.Location = new System.Drawing.Point(62, 2);
             this.cloudFeature1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cloudFeature1.Name = "cloudFeature1";
             this.cloudFeature1.Size = new System.Drawing.Size(300, 22);
             this.cloudFeature1.TabIndex = 4;
-            this.cloudFeature1.Text = "Datastreams";
+            this.cloudFeature1.Text = "CYMTCC_LT_DEVICE";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(372, 0);
+            this.label19.Location = new System.Drawing.Point(368, 0);
             this.label19.Name = "label19";
             this.label19.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label19.Size = new System.Drawing.Size(56, 22);
+            this.label19.Size = new System.Drawing.Size(53, 21);
             this.label19.TabIndex = 8;
             this.label19.Text = "Version";
             // 
             // cloudVersion1
             // 
-            this.cloudVersion1.Location = new System.Drawing.Point(434, 2);
+            this.cloudVersion1.Location = new System.Drawing.Point(427, 2);
             this.cloudVersion1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cloudVersion1.Name = "cloudVersion1";
             this.cloudVersion1.Size = new System.Drawing.Size(44, 22);
@@ -1383,16 +1436,16 @@ namespace CapabilityRequest
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(484, 0);
+            this.label20.Location = new System.Drawing.Point(477, 0);
             this.label20.Name = "label20";
             this.label20.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label20.Size = new System.Drawing.Size(45, 22);
+            this.label20.Size = new System.Drawing.Size(41, 21);
             this.label20.TabIndex = 10;
             this.label20.Text = "Count";
             // 
             // cloudCount1
             // 
-            this.cloudCount1.Location = new System.Drawing.Point(535, 2);
+            this.cloudCount1.Location = new System.Drawing.Point(524, 2);
             this.cloudCount1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cloudCount1.Name = "cloudCount1";
             this.cloudCount1.Size = new System.Drawing.Size(44, 22);
@@ -1401,7 +1454,7 @@ namespace CapabilityRequest
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(585, 2);
+            this.button9.Location = new System.Drawing.Point(574, 2);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -1413,7 +1466,7 @@ namespace CapabilityRequest
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(769, 2);
+            this.button11.Location = new System.Drawing.Point(758, 2);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -1443,13 +1496,13 @@ namespace CapabilityRequest
             this.label21.Location = new System.Drawing.Point(3, 0);
             this.label21.Name = "label21";
             this.label21.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label21.Size = new System.Drawing.Size(57, 22);
+            this.label21.Size = new System.Drawing.Size(53, 21);
             this.label21.TabIndex = 3;
             this.label21.Text = "Feature";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(66, 2);
+            this.textBox10.Location = new System.Drawing.Point(62, 2);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(300, 22);
@@ -1458,16 +1511,16 @@ namespace CapabilityRequest
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(372, 0);
+            this.label22.Location = new System.Drawing.Point(368, 0);
             this.label22.Name = "label22";
             this.label22.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label22.Size = new System.Drawing.Size(56, 22);
+            this.label22.Size = new System.Drawing.Size(53, 21);
             this.label22.TabIndex = 12;
             this.label22.Text = "Version";
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(434, 2);
+            this.textBox11.Location = new System.Drawing.Point(427, 2);
             this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(44, 22);
@@ -1476,16 +1529,16 @@ namespace CapabilityRequest
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(484, 0);
+            this.label23.Location = new System.Drawing.Point(477, 0);
             this.label23.Name = "label23";
             this.label23.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label23.Size = new System.Drawing.Size(45, 22);
+            this.label23.Size = new System.Drawing.Size(41, 21);
             this.label23.TabIndex = 14;
             this.label23.Text = "Count";
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(535, 2);
+            this.textBox12.Location = new System.Drawing.Point(524, 2);
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(44, 22);
@@ -1509,22 +1562,22 @@ namespace CapabilityRequest
             this.label25.Location = new System.Drawing.Point(3, 0);
             this.label25.Name = "label25";
             this.label25.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label25.Size = new System.Drawing.Size(55, 22);
+            this.label25.Size = new System.Drawing.Size(53, 21);
             this.label25.TabIndex = 10;
             this.label25.Text = "Device ";
             // 
             // cloudDevice
             // 
-            this.cloudDevice.Location = new System.Drawing.Point(64, 2);
+            this.cloudDevice.Location = new System.Drawing.Point(62, 2);
             this.cloudDevice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cloudDevice.Name = "cloudDevice";
             this.cloudDevice.Size = new System.Drawing.Size(302, 22);
             this.cloudDevice.TabIndex = 11;
-            this.cloudDevice.Text = "H4H1HKBLWK8G";
+            this.cloudDevice.Text = "NGKYJH8NJW10";
             // 
             // btnCloudAcquire
             // 
-            this.btnCloudAcquire.Location = new System.Drawing.Point(372, 2);
+            this.btnCloudAcquire.Location = new System.Drawing.Point(370, 2);
             this.btnCloudAcquire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCloudAcquire.Name = "btnCloudAcquire";
             this.btnCloudAcquire.Size = new System.Drawing.Size(150, 30);
@@ -1536,10 +1589,10 @@ namespace CapabilityRequest
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(528, 0);
+            this.label24.Location = new System.Drawing.Point(526, 0);
             this.label24.Name = "label24";
             this.label24.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label24.Size = new System.Drawing.Size(198, 22);
+            this.label24.Size = new System.Drawing.Size(180, 21);
             this.label24.TabIndex = 9;
             this.label24.Text = "(Use negative count to return)";
             // 
@@ -1569,6 +1622,217 @@ namespace CapabilityRequest
             this.cloudStatus.Size = new System.Drawing.Size(875, 22);
             this.cloudStatus.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.flowLayoutPanel31);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(982, 485);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "LLS - Buffer";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel31
+            // 
+            this.flowLayoutPanel31.Controls.Add(this.flowLayoutPanel33);
+            this.flowLayoutPanel31.Controls.Add(this.flowLayoutPanel32);
+            this.flowLayoutPanel31.Controls.Add(this.flowLayoutPanel34);
+            this.flowLayoutPanel31.Controls.Add(this.LLSStatus);
+            this.flowLayoutPanel31.Controls.Add(this.flowLayoutPanel35);
+            this.flowLayoutPanel31.Location = new System.Drawing.Point(3, 6);
+            this.flowLayoutPanel31.Name = "flowLayoutPanel31";
+            this.flowLayoutPanel31.Size = new System.Drawing.Size(970, 406);
+            this.flowLayoutPanel31.TabIndex = 1;
+            // 
+            // flowLayoutPanel33
+            // 
+            this.flowLayoutPanel33.Controls.Add(this.label35);
+            this.flowLayoutPanel33.Controls.Add(this.LLSHostID);
+            this.flowLayoutPanel33.Controls.Add(this.button13);
+            this.flowLayoutPanel33.Location = new System.Drawing.Point(3, 2);
+            this.flowLayoutPanel33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel33.Name = "flowLayoutPanel33";
+            this.flowLayoutPanel33.Size = new System.Drawing.Size(884, 34);
+            this.flowLayoutPanel33.TabIndex = 14;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 16);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Host Id";
+            // 
+            // LLSHostID
+            // 
+            this.LLSHostID.Location = new System.Drawing.Point(58, 3);
+            this.LLSHostID.Name = "LLSHostID";
+            this.LLSHostID.Size = new System.Drawing.Size(202, 22);
+            this.LLSHostID.TabIndex = 4;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(266, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(85, 28);
+            this.button13.TabIndex = 7;
+            this.button13.Text = "Reload";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // flowLayoutPanel32
+            // 
+            this.flowLayoutPanel32.Controls.Add(this.label32);
+            this.flowLayoutPanel32.Controls.Add(this.LLSFeature1);
+            this.flowLayoutPanel32.Controls.Add(this.label33);
+            this.flowLayoutPanel32.Controls.Add(this.LLSVersion1);
+            this.flowLayoutPanel32.Controls.Add(this.label34);
+            this.flowLayoutPanel32.Controls.Add(this.LLSCount1);
+            this.flowLayoutPanel32.Location = new System.Drawing.Point(3, 40);
+            this.flowLayoutPanel32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel32.Name = "flowLayoutPanel32";
+            this.flowLayoutPanel32.Size = new System.Drawing.Size(884, 34);
+            this.flowLayoutPanel32.TabIndex = 13;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 0);
+            this.label32.Name = "label32";
+            this.label32.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label32.Size = new System.Drawing.Size(53, 21);
+            this.label32.TabIndex = 3;
+            this.label32.Text = "Feature";
+            // 
+            // LLSFeature1
+            // 
+            this.LLSFeature1.Location = new System.Drawing.Point(62, 2);
+            this.LLSFeature1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LLSFeature1.Name = "LLSFeature1";
+            this.LLSFeature1.Size = new System.Drawing.Size(300, 22);
+            this.LLSFeature1.TabIndex = 4;
+            this.LLSFeature1.Text = "survey";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(368, 0);
+            this.label33.Name = "label33";
+            this.label33.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label33.Size = new System.Drawing.Size(53, 21);
+            this.label33.TabIndex = 8;
+            this.label33.Text = "Version";
+            // 
+            // LLSVersion1
+            // 
+            this.LLSVersion1.Location = new System.Drawing.Point(427, 2);
+            this.LLSVersion1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LLSVersion1.Name = "LLSVersion1";
+            this.LLSVersion1.Size = new System.Drawing.Size(44, 22);
+            this.LLSVersion1.TabIndex = 9;
+            this.LLSVersion1.Text = "1.0";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(477, 0);
+            this.label34.Name = "label34";
+            this.label34.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label34.Size = new System.Drawing.Size(41, 21);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "Count";
+            // 
+            // LLSCount1
+            // 
+            this.LLSCount1.Location = new System.Drawing.Point(524, 2);
+            this.LLSCount1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LLSCount1.Name = "LLSCount1";
+            this.LLSCount1.Size = new System.Drawing.Size(44, 22);
+            this.LLSCount1.TabIndex = 11;
+            this.LLSCount1.Text = "1";
+            // 
+            // flowLayoutPanel34
+            // 
+            this.flowLayoutPanel34.Controls.Add(this.button17);
+            this.flowLayoutPanel34.Controls.Add(this.label38);
+            this.flowLayoutPanel34.Controls.Add(this.button18);
+            this.flowLayoutPanel34.Controls.Add(this.button14);
+            this.flowLayoutPanel34.Location = new System.Drawing.Point(3, 78);
+            this.flowLayoutPanel34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel34.Name = "flowLayoutPanel34";
+            this.flowLayoutPanel34.Size = new System.Drawing.Size(884, 37);
+            this.flowLayoutPanel34.TabIndex = 15;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(3, 2);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(150, 30);
+            this.button17.TabIndex = 3;
+            this.button17.Text = "Acquire/Return";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(159, 0);
+            this.label38.Name = "label38";
+            this.label38.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label38.Size = new System.Drawing.Size(180, 21);
+            this.label38.TabIndex = 9;
+            this.label38.Text = "(Use negative count to return)";
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(345, 2);
+            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(150, 30);
+            this.button18.TabIndex = 10;
+            this.button18.Text = "Preview";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(501, 2);
+            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button14.Name = "button14";
+            this.button14.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button14.Size = new System.Drawing.Size(80, 32);
+            this.button14.TabIndex = 12;
+            this.button14.Text = "Clear ";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // LLSStatus
+            // 
+            this.LLSStatus.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.LLSStatus.Font = new System.Drawing.Font("Arial", 9F);
+            this.LLSStatus.ForeColor = System.Drawing.SystemColors.Window;
+            this.LLSStatus.Location = new System.Drawing.Point(3, 120);
+            this.LLSStatus.Name = "LLSStatus";
+            this.LLSStatus.Size = new System.Drawing.Size(948, 240);
+            this.LLSStatus.TabIndex = 16;
+            this.LLSStatus.Text = "";
+            // 
+            // flowLayoutPanel35
+            // 
+            this.flowLayoutPanel35.Controls.Add(this.textBox16);
+            this.flowLayoutPanel35.Location = new System.Drawing.Point(3, 366);
+            this.flowLayoutPanel35.Name = "flowLayoutPanel35";
+            this.flowLayoutPanel35.Size = new System.Drawing.Size(908, 35);
+            this.flowLayoutPanel35.TabIndex = 17;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(3, 3);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(875, 22);
+            this.textBox16.TabIndex = 0;
+            // 
             // DemoUserLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1576,7 +1840,7 @@ namespace CapabilityRequest
             this.ClientSize = new System.Drawing.Size(1002, 516);
             this.Controls.Add(this.tabControl1);
             this.Name = "DemoUserLicense";
-            this.Text = "Demo User License";
+            this.Text = "Demo LLS - 1";
             this.Load += new System.EventHandler(this.DemoUserLicense_Load);
             this.tabPage4.ResumeLayout(false);
             this.flowLayoutPanel8.ResumeLayout(false);
@@ -1636,6 +1900,16 @@ namespace CapabilityRequest
             this.flowLayoutPanel27.PerformLayout();
             this.flowLayoutPanel28.ResumeLayout(false);
             this.flowLayoutPanel28.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.flowLayoutPanel31.ResumeLayout(false);
+            this.flowLayoutPanel33.ResumeLayout(false);
+            this.flowLayoutPanel33.PerformLayout();
+            this.flowLayoutPanel32.ResumeLayout(false);
+            this.flowLayoutPanel32.PerformLayout();
+            this.flowLayoutPanel34.ResumeLayout(false);
+            this.flowLayoutPanel34.PerformLayout();
+            this.flowLayoutPanel35.ResumeLayout(false);
+            this.flowLayoutPanel35.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1776,6 +2050,29 @@ namespace CapabilityRequest
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel24;
         private System.Windows.Forms.RichTextBox TSFNOOffline;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button cmdLLSPreview;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel31;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel33;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox LLSHostID;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel32;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox LLSFeature1;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox LLSVersion1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox LLSCount1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel34;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.RichTextBox LLSStatus;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel35;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button button22;
     }
     public class LicenseInfo
     {

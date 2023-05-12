@@ -70,25 +70,27 @@ See the User Guide for more information.";
 
             try
             {
-                string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+                //string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+                //string strPath  = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + Path.DirectorySeparatorChar;
+                //string strPath = Environment.CurrentDirectory + Path.DirectorySeparatorChar;
+                string strPath = "C:\\temp" + Path.DirectorySeparatorChar;
                 // Initialize ILicensing interface with identity data using the Windows common document 
                 // respository as the trusted storage location and the hard-coded string hostid "1234567890".
-                licensing = LicensingFactory.GetLicensing( 
-                          IdentityClient.IdentityData,
-                           strPath,
-                           "");
+                licensing = LicensingFactory.GetLicensing(IdentityClient.IdentityData, strPath, "");
 
-                    licensing.Administration.Delete(DeleteOption.PrivateData);
-                    hostIDs = licensing.LicenseManager.HostIds;
-
+               // licensing.Administration.Delete(DeleteOption.TrustedStorage);
+                hostIDs = licensing.LicenseManager.HostIds;
+                var keys = hostIDs.Keys;
                 //load trial data if not already loaded
-                TrialEaton trialEaton = new TrialEaton();
-                byte[] trialData = trialEaton.TrialData;
-                licensing.LicenseManager.ProcessTrial(trialData);
+                //    TrialEaton trialEaton = new TrialEaton();
+                //    byte[] trialData = trialEaton.TrialData;
+                //    licensing.LicenseManager.ProcessTrial(trialData);
+
+                string hostID = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_ETHERNET][0];
+                licensing = LicensingFactory.GetLicensing(IdentityClient.IdentityData, strPath, hostID, "Server0");
 
 
-
-                List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_USER];
+                List<String> ethernetIDs = hostIDs[HostIdEnum.FLX_HOSTID_TYPE_ETHERNET];
                     //Chapter 6 Using the FlexNet Embedded APIs
                     // Common Steps to Prepare for Licensing
 
@@ -97,8 +99,8 @@ See the User Guide for more information.";
                     // The host type is typically a name set by the implementer, and is not modifiable by the user.
                     // While optional, the host type may be used in certain scenarios by some back-office systems such as FlexNet Operations.
                     licensing.LicenseManager.HostType = "FLX_CLIENT";
-                    licensing.LicenseManager.AddTrustedStorageLicenseSource();
-                    licensing.LicenseManager.AddTrialLicenseSource();
+                   // licensing.LicenseManager.AddTrustedStorageLicenseSource();
+                   // licensing.LicenseManager.AddTrialLicenseSource();
             }
             catch (Exception exc)
             {
@@ -141,8 +143,12 @@ See the User Guide for more information.";
         public bool ReturnTrials()
         {
             licensing.Administration.Delete(DeleteOption.Trials);
-            licensing.Administration.Delete(DeleteOption.TrustedStorage);
+            
             return true;
+        }
+        public Dictionary<HostIdEnum, List<String>> AvailableHostIDs()
+        {
+            return hostIDs;
         }
         public string DemoSelectHost(FlxDotNetClient.HostIdEnum hostId)
         {
@@ -151,14 +157,22 @@ See the User Guide for more information.";
             else
                 return "key not found";
         }
+        public void ResetTS()
+        {
+           bool res = licensing.Administration.Delete(DeleteOption.TrustedStorage);
+        }
+        public void BufferLicensingHost(string hostId)
+        {
+            licensing = LicensingFactory.GetLicensing(IdentityClient.IdentityData, null,hostId);
+            licensing.LicenseManager.HostType = "FLX_CLIENT";
+ 
+        }
         public void DemoRefreshLicensingHost(string hostId)
         {
-            string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
 
-            licensing = LicensingFactory.GetLicensing(
-          IdentityClient.IdentityData,
-          strPath,
-          hostId);
+            //string strPath = Util.GetDefaultTSLocation() + Path.DirectorySeparatorChar;
+            string strPath = Environment.CurrentDirectory + Path.DirectorySeparatorChar;
+            licensing = LicensingFactory.GetLicensing(IdentityClient.IdentityData, strPath, hostId);
             licensing.LicenseManager.HostType = "FLX_CLIENT";
         }
         //  ****To-Do: change "buffer1" -> filename
@@ -268,8 +282,8 @@ See the User Guide for more information.";
 
             //options.AddVendorDictionaryItem(dictionaryKey1, "Some string value");
             //options.AddVendorDictionaryItem(dictionaryKey2, 123);
-            options.Incremental = true;
-            options.ForceResponse = true;
+            //options.Incremental = true;
+            //options.ForceResponse = true;
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
             if (File.Exists(demoFileName))
             {
@@ -291,9 +305,51 @@ See the User Guide for more information.";
             //if (act2_id.Trim() != "")
             //    options.AddRightsId(act2_id, cnt);
 
-            options.Incremental = true;
-            options.ForceResponse = true;
+            //options.Incremental = true;
+            //options.ForceResponse = true;
 
+            ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
+
+            Util.DisplayInfoMessage(String.Format("Sending the capability request to: {0}", demoServerURL));
+            byte[] binCapResponse = null;
+
+            // send the capability request to the server and receive the server response
+            CommFactory.Create(demoServerURL).SendBinaryMessage(capabilityRequestData.ToArray(), out binCapResponse);
+            if (binCapResponse != null && binCapResponse.Length > 0)
+            {
+                Util.DisplayInfoMessage("Response received");
+            }
+            if (options.Operation != CapabilityRequestOperation.Preview)
+            {
+                ProcessCapabilityResponse(binCapResponse);
+            }
+            else
+            {
+                ShowPreviewResponse(binCapResponse);
+            }
+            //MessageBox.Show("Registration succeeded");
+            return true;
+        }
+        public bool DemoSendCapabilityFeatureTimedRequest(string feature, string version, int cnt, string demoServerURL)
+        {
+            Util.DisplayInfoMessage("Creating the capability request");
+
+            // create the capability request
+            ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
+            DateTime todayDate = DateTime.Now;
+            DateTime expiryDate = todayDate.AddDays(5);
+            //DateTime expiryDate = todayDate.AddMinutes(5);
+
+            options.AddDesiredFeature(new FeatureData(feature, version, cnt));
+
+            //options.AddDesiredFeature(new FeatureData(feature, version, cnt,expiryDate));
+            //if (act2_id.Trim() != "")
+            //    options.AddRightsId(act2_id, cnt);
+
+            //options.Incremental = true;
+            //options.ForceResponse = true;
+            //options.RequestAllFeatures = true;
+            options.AcquisitionId = "XXX";
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
 
             Util.DisplayInfoMessage(String.Format("Sending the capability request to: {0}", demoServerURL));
@@ -328,7 +384,8 @@ See the User Guide for more information.";
             if (act3_id.Trim() != "")
                 options.AddRightsId(act3_id, cnt3);
 
-            options.Incremental = true;
+            
+            //options.Incremental = true;
             //         options.ForceResponse = true;
 
             ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
@@ -439,6 +496,7 @@ See the User Guide for more information.";
 
             // determine whether or not a confirmation request is needed
             Util.DisplayInfoMessage(String.Format("Confirmation request is {0}needed", response.ConfirmationRequestNeeded ? String.Empty : "not "));
+
         }
 
         private static void ShowDictionary(ReadOnlyDictionary dictionary, string dictionaryType)
@@ -465,14 +523,17 @@ See the User Guide for more information.";
                                         itemType, item.Key, item.Value));
             }
         }
-        private static void ShowPreviewResponse(byte[] binCapResponse)
+        private string ShowPreviewResponse(byte[] binCapResponse)
         {
             Util.DisplayInfoMessage("Examining preview capability response");
             ICapabilityResponse response = licensing.LicenseManager.GetResponseDetails(binCapResponse);
+            string res = "";
             ShowCapabilityResponseDetails(response);
-            ShowCapabilityResponseFeatures(response);
+            res+=ShowCapabilityResponseFeatures(response);
+
+            return res;
         }
-        private static void ShowCapabilityResponseFeatures(ICapabilityResponse response)
+        private string ShowCapabilityResponseFeatures(ICapabilityResponse response)
         {
             // display the features found in the capability response
             Util.DisplayInfoMessage("==============================================");
@@ -481,6 +542,7 @@ See the User Guide for more information.";
 
             IFeatureCollection collection = response.FeatureCollection;
             int index = 1;
+            string str = "";
             foreach (IFeature feature in collection)
             {
                 StringBuilder builder = new StringBuilder();
@@ -529,12 +591,15 @@ See the User Guide for more information.";
                 }
                 Util.DisplayInfoMessage(builder.ToString());
                 index++;
+                str += builder.AppendLine(string.Empty);
             }
+
+            return str;
         }
         private static void ShowTSFeatures()
         {
             // display the features found in the trusted storage
-            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage);
+            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage, true);
             if (collection.Count == 0)
             {
                 //MessageBox.Show("You are not licensed.","FNE Toolkit Demo");
@@ -634,7 +699,7 @@ See the User Guide for more information.";
         public string DisplayTSFeatures()
         {
             // display the features found in the trusted storage
-            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage);
+            IFeatureCollection collection = licensing.LicenseManager.GetFeatureCollection(LicenseSourceOption.TrustedStorage, true);
             if (collection.Count == 0)
             {
                 //MessageBox.Show("You are not licensed.", "FNE Toolkit Demo");
@@ -657,7 +722,22 @@ See the User Guide for more information.";
             //MessageBox.Show(builder.ToString());
             return (builder.ToString());
         }
-
+        public string Preview(string serverURL)
+        {
+            ICapabilityRequestOptions options = licensing.LicenseManager.CreateCapabilityRequestOptions();
+            options.Operation = CapabilityRequestOperation.Preview;
+            options.RequestAllFeatures = true;
+            ICapabilityRequestData capabilityRequestData = licensing.LicenseManager.CreateCapabilityRequest(options);
+            byte[] binCapResponse = null;
+            // send the capability request to the server and receive the server response
+            CommFactory.Create(serverURL).SendBinaryMessage(capabilityRequestData.ToArray(), out binCapResponse);
+            if (binCapResponse != null && binCapResponse.Length > 0)
+            {
+                Util.DisplayInfoMessage("Response received");
+            }
+            string ret = ShowPreviewResponse(binCapResponse);
+            return ret;
+        }
 
     }
 }

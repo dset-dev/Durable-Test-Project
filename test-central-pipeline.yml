@@ -1,0 +1,66 @@
+parameters:
+- name: proxyName
+  displayName: Proxy Name
+  type: string
+  default: ADO_GHE_EntitlementManagementDataAccess-v1
+
+- name: packageName
+  displayName: Package Name
+  type: string
+  default: test-package-2
+
+pr: none 
+trigger: none      
+
+steps:
+- checkout: self
+  fetchDepth: 4
+  submodules: recursive
+  displayName: Get Pipeline components
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'download'
+    downloadDirectory: '${{parameters.proxyName}}'
+    feedsToUse: 'internal'
+    vstsFeed: '89dd7b98-7d1e-4420-a756-ea7e71c87059' 
+    vstsFeedPackage: '${{parameters.packageName}}'
+    vstsPackageVersion: '0.0.1'
+  displayName: Downloading proxy to build and deploy
+
+- script: |
+    echo downloaded package ${{parameters.packageName}}
+    echo building and deploying proxy ${{parameters.proxyName}}
+    echo listing current agent contents
+    ls
+  displayName: Verify Agent Contents
+
+- script: |
+    echo this is where the maven build of the proxy would occur. 
+    echo we set the proxy name in the pom, 
+    echo move the files to be under apigee-build-ci-cd/app, 
+    echo and run the maven tasks. 
+    echo parameters will need to come from a configuration file, i.e. a json created in the adopter pipeline. 
+  displayName: Build and Deploy Step
+
+- script: | 
+    echo build uri: $(Build.BuildURI)
+    echo build ID: $(Build.BuildId)
+    mkdir build-logs
+    python python-scripts/get-build-logs.py --buildid=$(Build.BuildId) --token=$(azure-pat)
+    ls
+    ls -la build-logs
+    cd build-logs
+    head logs-$(Build.BuildId)-step-4.log
+  displayName: Debug Values for Logs
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: 'build-logs'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '89dd7b98-7d1e-4420-a756-ea7e71c87059'
+    vstsFeedPackagePublish: '${{parameters.packageName}}-results'
+    versionOption: 'patch'
+    packagePublishDescription: 'results for the most recent build of ${{parameters.packageName}}'
+  displayName: Publish build results to feed

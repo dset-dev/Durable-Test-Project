@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Windows.Forms;
 //using static CapabilityRequest.DemoCapabilityRequest;
 
@@ -19,6 +20,7 @@ namespace CapabilityRequest
         CapabilityRequest.Demo demo;
         public DemoUserLicense()
         {
+            //comm
             InitializeComponent();
             InitHostIdTypes();
         }
@@ -42,13 +44,24 @@ namespace CapabilityRequest
         {
             int selectedIndex = 0;
             lstHostType.Items.Clear();
-            foreach (HostIdEnum hostIdType in Enum.GetValues(typeof(HostIdEnum)))
+            demo = new Demo();
+            //foreach (HostIdEnum hostIdType in Enum.GetValues(typeof(HostIdEnum)))
+            var hostIdTypes = demo.AvailableHostIDs();
+
+            foreach (HostIdEnum hostIdType in hostIdTypes.Keys)
             {
                 if (hostIdType == HostIdEnum.FLX_HOSTID_TYPE_ETHERNET ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_STRING ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_USER ||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_DISPLAY ||
+                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_HOSTDOMAIN ||
+                       hostIdType == HostIdEnum.FLX_HOSTID_TYPE_HOSTNAME ||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_LONGHOSTID ||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_VSN||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_COMPOSITE ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_INTERNET ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_INTERNET6 ||
+                    hostIdType == HostIdEnum.FLX_HOSTID_TYPE_FLEXID9 ||
                     hostIdType == HostIdEnum.FLX_HOSTID_TYPE_VM_UUID)
                 {
                     if (hostIdType == HostIdEnum.FLX_HOSTID_TYPE_STRING)
@@ -158,7 +171,7 @@ namespace CapabilityRequest
 
         private void EntitlementIdSubmitButton_Click(object sender, EventArgs e)
         {
-            TSFNOOnline.Text = demo.DisplayTSFeatures();
+            TSFNOOnline.Text = HttpUtility.HtmlDecode(demo.DisplayTSFeatures());
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -197,7 +210,7 @@ namespace CapabilityRequest
                 //var serverURL = "https://flex1369-uat.compliance.flexnetoperations.com:443/instances/H4H1HKBLWK8G/request";
                 var serverURL = "http://localhost:7070/fne/bin/capability";
 
-                if (demo.DemoSendCapabilityFeatureRequest(feature, version, cnt, serverURL))
+                if (demo.DemoSendCapabilityFeatureTimedRequest(feature, version, cnt, serverURL))
                 {
                     llsTSStatus.Text = $"Registration succeeded";
                 }
@@ -250,9 +263,14 @@ namespace CapabilityRequest
                 string device = cloudDevice.Text;
 
                 var serverURL="https://eaton-uat.compliance.flexnetoperations.com/instances/" + device + "/request";
+
+                //Sankar
+                //var serverURL = "https://eaton-uat.compliance.flexnetoperations.com/instances/" + device + "/request"
+                //var serverURL = "https://eaton-fno-uat.flexnetoperations.com/instances/LJKDF7J35DAJ/request";
                 //var serverURL = "https://flex1369-uat.compliance.flexnetoperations.com:443/instances/"+device+ "/request";
 
 
+                //if (demo.DemoSendCapabilityFeatureTimedRequest(feature, version, cnt, serverURL))
                 if (demo.DemoSendCapabilityFeatureRequest(feature, version, cnt, serverURL))
                 {
                     cloudStatus.Text = $"Registration succeeded";
@@ -279,6 +297,7 @@ namespace CapabilityRequest
                     cnt3 = Int32.Parse(onlineCnt3.Text);
                 }
                 var serverURL = "https://eaton-fno-uat.flexnetoperations.com//flexnet//operations//deviceservices";
+                //var serverURL="https://eaton-fno-uat.flexnetoperations.com//flexnet//deviceservices";
                 if (demo.DemoSendCapabilityRequest(actId, actId2, actId3, cnt1,cnt2,cnt3, serverURL))
                 // if (demo.DemoSendCapabilityFeatureRequest(feature, cnt, serverURL))
                 {
@@ -360,6 +379,45 @@ namespace CapabilityRequest
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdLLSPreview_Click(object sender, EventArgs e)
+        {
+            var serverURL = "http://localhost:7070/fne/bin/capability";
+
+            llsTSStatus.Text = demo.Preview(serverURL);
+
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (feature1.Text.Length > 0)
+            {
+
+                string feature = LLSFeature1.Text;
+                string version = LLSVersion1.Text;
+                int cnt = Int32.Parse(LLSCount1.Text);
+
+                //var serverURL = "https://flex1369-uat.compliance.flexnetoperations.com:443/instances/H4H1HKBLWK8G/request";
+                var serverURL = "http://localhost:7070/fne/bin/capability";
+
+                if (demo.DemoSendCapabilityFeatureTimedRequest(feature, version, cnt, serverURL))
+                {
+                    LLSStatus.Text = $"Registration succeeded";
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            demo.BufferLicensingHost(LLSHostID.Text);
+            LLSStatus.Text = "Reloaded host";
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            demo.ResetTS();
         }
     }
 }
